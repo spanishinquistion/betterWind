@@ -1,0 +1,163 @@
+<!-- 00003 dashboard html input file --> 
+<META HTTP-EQUIV="content-type" CONTENT="text/html; charset=utf-8">
+<script type="text/javascript" src="dashboard_site_data_00003.json"></script> 
+
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../styles.css">
+ 
+  <script type="text/javascript" src="../def/def_cp.js"></script>
+  <script type="text/javascript" src="../def/def_v_ave.js"></script>
+  <script type="text/javascript" src="../def/def_wind_rose.js"></script>
+  <script type="text/javascript" src="../def/def_pdf.js"></script>
+
+  <script type="text/javascript" src="../webfiles/Chart.js"></script>  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--   <link rel="stylesheet" type="text/css" href="menu.css"> -->
+</head>
+<body>
+
+<div class="topnav" id="myTopnav">
+  <a href="../index.html"><img src="../fwlogo.svg" alt="FirstWind"</a> 
+   <a href="../index.html">FirstWind</a>
+       <a href="../about.html">About</a>
+    <a href="../wind_map.html">Wind Site Map</a>
+    <!--<a class="active" href="dashboard_00003.html">Example Dashboard</a>-->
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+<div class="greater_container">
+<div class="container">
+
+<div class="cell cell_header_new">
+  <div class="site_name">
+    <h1><script>document.write(site_data.site);</script></h1>
+    <p><script>document.write(site_data.land);</script></p>
+    <p><script>document.write(site_data.lat),document.write(', '),document.write(site_data.lon);</script></p>
+  </div>
+    <div class=site_map_div>
+      <object type="text/html" class="site_map" data="../miniMaps/dashboard_map_00003.html"></object>
+    </div>
+  <div class="key_data">
+    <div>
+        <div>Average Wind Speed</div>
+        <div> <script>document.write(site_data.v_ave);</script> </div>
+        <div>meters / second</div>
+    </div>
+    <div>
+        <div>Capacity Factor</div>
+        <div>  <script>document.write(site_data.c_p);</script></div>
+        <div>percent</div>
+    </div>
+  </div>
+</div>
+
+
+<div class="cell cell_recording_history">
+        <h3 class="tooltip">Wind Turbine Estimated Production<span class="tooltiptext">Potential energy a turbine could produce in a year. <a href="../about.html">More</a></span></h3>
+<p>
+  <table id="recording_history_table" class="table">
+    <script type="text/javascript" src="dashboard_site_data_00003.json"></script>
+  </table>
+
+</div> 
+
+<div class = "cell cell_wind_history">
+    <h3 class="tooltip">Wind Speed Annual History<span class="tooltiptext">Calculated wind speed average based on standard tower heights.<a href="about.html#average_wind_speed">More</a></span></h3>
+    <canvas id="wind_speed_annual_history"></canvas>
+    <script>v_ave_plot(v_ave);</script>
+</div>
+
+<div class = "cell cell_probability_density">
+    <h3 class="tooltip">Wind Speed Probability Density<span class="tooltiptext">Wind speed distribution or how often the wind at the site is at a given wind speed.<a href="about.html#probability_density">More</a></span></h3>
+    <canvas id="probability_density"></canvas>
+    <script>pdf_plot(pdf_data);</script>
+</div>
+
+<div class="cell cell_wind_direction">
+    <h3 class=tooltip> Prevailing Wind Direction: <script>document.write(site_data.prevailing_wind_dir);</script><span class="tooltiptext">A preliminary analysis of the wind direction are provided along with the prevailing wind direction.<a href="about.html#wind_direction" target="">More</a></span></h3> 
+    <canvas id="wind_rose0" width="500" height="500"></canvas>
+    <script>wind_rose_plot(wind_rose_data_m0);</script>
+</div>
+
+<div class="cell cell_capacity">
+    <h3 class="tooltip">Capacity Factor<span class="tooltiptext">Estimated percent of possible energy a turbine could produce in a year at the site. Equivalent full time operation.<a href="about.html#capacity_factor">More</a></span></h3>
+    <canvas id="capacity_factor"width="500" height="500">></canvas> 
+     <script>cp_plot(production.c_p);</script>
+</div>
+
+<div class="cell cell_estimated_production">
+    <h3 class="tooltip">Measurement Height Record<span class="tooltiptext">Record of the measurement mast height used in wind calculations. <a href="about.html#estimated_production_about">More</a></span></h3>
+  <table id="estimated_production" class="table">
+    <script type="text/javascript" src="dashboard_site_data_00003.json"></script>
+  </table>
+
+
+</div> 
+
+<div class="cell cell_factoids">
+      <h3>Additional Data Available</h3>
+<div class="key_data">
+        <div>
+          <div>Data Available</div>
+          <div><script>document.write(site_data.years);</script></div>
+          <div>Years</div>   
+        </div>
+        <div>
+          <div>Higher Quality Data</div>
+          <div><script>document.write(site_data.years10min);</script></div>
+          <div>Years Available</div>
+        </div>
+        <div>
+            <div>Data Freshness</div>
+            <div><script>document.write(site_data.last);</script></div>
+            <div>Last Data Measurement</div>
+    </div>
+</div>
+<p>This is a preliminary report based on hourly data (data averaged every hour). We generate detailed reports on demand. This includes processing the industry standard ten-minute data from publicly available DWD data. The higher resolution data analysis provides more accurate estimates and is the measuring frequency used in industry.</p>
+<div class="button"><a href="mailto:info@openwinddata.com?subject=Detailed%20wind%20data%20SITE - 00003 Aachen&body=To%20receive%20a%20detailed%20report%20of%20your%20site's%20wind%20data,%20please%20provide%20your%20contact%20information%20below.%20We%20will%20contact%20you%20as%20soon%20as%20possible.">Request a detailed report</a></div>
+        </div>
+
+    <script>
+var row_data = '<tr> <th>Year Start </th>  <th>Year End</th> <th> Measurement Height m</th></tr>';
+for (var i = 0; i < meas_height.year_start.length; i++) {
+  var row_data = row_data + '<tr>' +
+    ' <td>' + meas_height.year_start[i] + '</td>' +
+    ' <td>' + meas_height.year_start[i] + '</td>' +
+    ' <td>' + meas_height.h_m[i].toFixed(2) + '</td>' +
+    '</tr>';
+}
+var table_body_element = document.createElement('tbody');
+table_body_element.innerHTML = row_data;
+document.getElementById('estimated_production').appendChild(table_body_element);
+</script>
+
+    <script>
+
+var row_data = '<tr> <th><h3 class="tooltip"> Turbine<span class="tooltiptext">The Small, Medium and Large turbine models are fully detailed in the Power Production section of the About page. <a href="about.html#power_production_about">More</a></span></h3></th> <th>Rated Power kW</th> <th>Energy Production kWh</th></tr>';
+for (var i = 0; i < production.turbine.length; i++) {
+  var row_data = row_data + '<tr>' +
+    ' <td>' + production.turbine[i] + '</td>' +
+    ' <td>' + production.P_R[i] + '</td>' +
+    ' <td>' + production.AEP[i] + '</td>' +
+    '</tr>';
+}
+var table_body_element = document.createElement('tbody');
+table_body_element.innerHTML = row_data;
+document.getElementById('recording_history_table').appendChild(table_body_element);
+</script>
+
+<script type="text/javascript" src="../webfiles/menu.js"></script> 
+
+</body>
+</html>
