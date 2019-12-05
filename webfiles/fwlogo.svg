@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="395px" height="69px" viewBox="0 0 395 69" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.2 (81672) - https://sketch.com -->
+    <title>fwlogo</title>
+    <desc>Created with Sketch.</desc>
+    <g id="fwlogo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <text id="Open-Wind-Data" font-family="SkolarSansLatnCp-Bd, Skolar Sans Latin Compressed" font-size="50" font-style="condensed" font-weight="bold" letter-spacing="-2">
+            <tspan x="79" y="50" fill="#6D6D6D">OPEN WIND </tspan>
+            <!-- <tspan x="294.9" y="50" fill="#004569">DATA</tspan>  -->
+        </text>
+        <g transform="translate(8.000000, 9.000000)" fill="#004569" fill-rule="nonzero" id="Trimark">
+            <g>
+                <g id="logoblade-copy-7" transform="translate(15.183947, 31.298522) scale(-1, 1) rotate(120.000000) translate(-15.183947, -31.298522) translate(-6.316053, 26.298522)">
+                    <path d="M4.52482759,-1.77635684e-15 L33.712,-1.77635684e-15 L43,9.04965517 L24.2766922,9.04965517 L4.52482759,9.04965517 C2.02583431,9.04965517 0,7.02382086 0,4.52482759 C0,2.02583431 2.02583431,-1.77635684e-15 4.52482759,-1.77635684e-15 Z" id="Rectangle-Copy-2"></path>
+                </g>
+                <g id="logoblade-copy-7" transform="translate(45.587821, 31.693832) scale(-1, 1) rotate(-120.000000) translate(-45.587821, -31.693832) translate(24.087821, 26.693832)">
+                    <path d="M4.52482759,-1.77635684e-15 L33.712,-1.77635684e-15 L43,9.04965517 L24.2766922,9.04965517 L4.52482759,9.04965517 C2.02583431,9.04965517 0,7.02382086 0,4.52482759 C0,2.02583431 2.02583431,-1.77635684e-15 4.52482759,-1.77635684e-15 Z" id="Rectangle-Copy-2"></path>
+                </g>
+                <g id="logoblade-copy-7" transform="translate(30.808707, 5.000000) scale(-1, 1) translate(-30.808707, -5.000000) translate(9.308707, 0.000000)">
+                    <path d="M4.52482759,-1.77635684e-15 L33.712,-1.77635684e-15 L43,9.04965517 L24.2766922,9.04965517 L4.52482759,9.04965517 C2.02583431,9.04965517 0,7.02382086 0,4.52482759 C0,2.02583431 2.02583431,-1.77635684e-15 4.52482759,-1.77635684e-15 Z" id="Rectangle-Copy-2"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
