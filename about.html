@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>OpenWind - Your source for renewable energy data</title>
+
+<link rel="stylesheet" type="text/css" href="styles.css">
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<script type="text/javascript" src="javascript.js"></script>  
+
+<script type="text/javascript" src="Chart.js"></script>  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<link href="https://fonts.googleapis.com/css?family=Lato:100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+
+
+<body>
+
+
+<div class="topnav" id="myTopnav">
+    <a href="index.html"><img src="fwlogo.svg" alt="OpenWind"></a>
+    <a class="active" href="about.html">About</a>
+    <a href="wind_map.html">Wind Site Map</a>
+    <a href="00003/dashboard_00003.html">Example Dashboard</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+<div class="greater_container">
+<div class="container">
+
+<br><br>
+
+<h1>Welcome to OpenWind</h1>
+
+<p>OpenWind provides a preliminary review of wind conditions for wind energy prospectors and property owners. The data used is from reliable sources that provide high quality data for the sites. </p>
+
+<p>On our <a href="wind_map.html" target="_blank">map page</a> you will find the overview map of all the measurement sites in Germany. </p>
+
+
+
+<h3>How to Use This Site</h3>
+<p>Many people want to know if it makes 'sense' to install a wind turbine at their site. This is not a simple question, it is site dependent first and foremost. What is available at the site with respect to wind? What kind of turbine will be installed? Will the power be used by the owner or sold to the grid?</p>
+
+<p>OpenWind provides answers to the questions about wind at the site. OpenWind uses reliable data to provide the analysis needed to determine the viability of turbine at a site. You can use our our analysis and the data provided by the DWD to determine if a wind turbine at your site is viable. We can estimate how much energy in kWh you should produce. What you do with the energy is up to you, you can use it or sell it. We can not tell you how much money you will make. </p>
+
+<p>Preliminary data is provided for free on this site. A more thorough analysis is also available using higher fidelity measurements. Contact us if you want more information. </p>
+
+<h3>The Data</h3>
+<p>The data is provided by the Deutsche WetterDienst (<a href="https://www.dwd.de/" class="parenthetical" target="_blank">DWD</a>). The DWD has over 400 measurement stations and the data is available. OpenWind provides the preliminary analysis using the hourly measurement data from the DWD sites. </p>
+<!-- DWD Logo!! -->
+
+
+<h3>Preliminary Site Data</h3>
+<ul>
+  <li>Location of the DWD measurements</li>
+  <li>Years of measurement data available <strong>[Y]</strong></li>
+    <li>Wind Direction Distribution<strong>[%]</strong></li>
+  <li>Average wind speed at measurement height <strong>[<span style="letter-spacing: -2px">V</span><sub>AVE</sub>]</strong></li>
+</ul>
+
+
+
+<h4>Location</h4>
+<p>The <a href="wind_map.html" target="_blank">map page</a> shows the various stations across Germany. The station name and location are provided to help users find the Deutscher Wetterdienst (DWD) station nearest to their location. </p>
+
+<h4>Years of data <strong>[Y - years]</strong> </h4>
+<p>The amount of data available varies at each site. The more data, the more accurate the predictions for future wind conditions. A standard wind site assessment requires at least one year of data at a prospective site. Each site page (<a href="dashboard_00003.html" class="parenthetical" target="_blank">Aachen Example</a>) lists how many years of data are available and how recently the data has been updated.</p>
+
+<h4 id="wind_dir"> Wind Direction</h4>
+
+<p>A preliminary analysis of the wind direction is provided along with the prevailing wind direction. Wind farms can take advantage of prevailing wind directions to optimize layouts.</p>
+
+<h4 id="average_wind_speed">Average wind speed <strong>[<span style="letter-spacing: -2px">V</span><sub>AVE</sub> - m/s]</strong></h4>
+<p>The wind speed average at each site is calculated along with averages based on standard tower heights. The heights of the measurement stations vary according to site and have changed over the years. The change in measurement heights in integrated into all the calculations and noted in the site page. The data is quality checked to remove all missing or bad data and the data quality noted for all sites. Note that the average wind speed is not a good indication of the energy production of a site. </p>
+
+<h1>Methods</h1>
+
+<h3>Preliminary Analyis Data</h3>
+
+<p>The methods used to estimate the power production are briefly explained here. The results from the analysis are in the table below.</p>
+
+
+<ul>
+  <li>Average wind speed projected to prospective hub heights <strong>[<span style="letter-spacing: -2px">V</span><sub>AVE</sub>]</strong></li>
+  <li>Wind Speed Distribution <strong>[%/kWH]</strong></li>
+  <li>Capacity Factor/Potential Power Production <strong>[%/kWH]</strong></li>
+</ul>
+
+
+<h3> Predicted Annual Wind Speed Averages at Hub Heights </h3>
+<p>In the preliminary analysis provided on the <a href="wind_map.html" target="_blank">map</a>, the wind speed values from the measurement station are projected to a standard hub heights. Three turbine models are used for comparison. The wind speed higher above the ground is generally faster than near the ground. The data is scaled up from the measurement height to the hub height using an industry standard logarithmic wind profile with an assumed roughness length of z<sub>0</sub> = 0.05 which assumes the site is flat with minimal blockage. This is representative of rural croplands.  The following equation is the logarithmic profile used for the analysis.</p>
+
+<div class="equation">
+
+<p>$$v_2 = v_1 { ln ( h_2 / z_0 ) \over ln ( h_m / z_0)}$$</p>
+
+<ul>
+  <li><p class="caption">v<sub>2</sub> - is the wind speed projected to the wind turbine hub height </li>
+  <li><p class="caption">v<sub>1</sub> - is the wind speed at the measurement height</li>
+  <li><p class="caption">h<sub>1</sub> - is the height at which the wind speed is measured</li>
+  <li><p class="caption">h<sub>2</sub> - is the wind turbine hub height</li>
+</ul>
+</div>
+
+<p>Obstacles at a site increase the surface roughness (z<sub>0</sub>) and in turn lower the speed of the wind as height increases.</p>
+
+<h4>Wind Speed Probability Distribution</h4>
+<p>The wind speed varies at a given site and the standard distribution that fits best to the wind speed distribution is the Weibull. A full description is available at <a href="https://en.wikipedia.org/wiki/Weibull_distribution" target="_blank">Wikipedia</a>. Using the industry standard Weibull distributon allows for a complete estimation of the wind speed probability distribution. </p>
+    
+ <p>Since the power produced by a wind turbine varies with the wind speed, it is necessary to calculate the wind speed distribution for all wind speeds where a turbine produces power (<a href="#powerCurve" target="_blank">power curve</a>). This data allows us to estimate the energy production and capacity factor. </p>
+
+
+<h4 id="capacity_factor">Capacity Factor <strong> - [Cp - %]</strong></h4>
+<p>The capacity factor is the percentage estimate of the potential energy a wind turbine  produces at a given site for a typical year. If a turbine were to produce at the rated or maximum power the entire year (impossible) then the capacity factor would be 100%. Normal sites onshore in Germany expect values in the low teens.  This value can be used to estimate the production of a turbine at a site and is used to determine the economic viability of a given site.</p>
+
+
+<h3 id = "power_production_about">Power Production</h3>
+<p>With a site wind speed distribution vector and a power curve vector from a turbine you can estimate the power production.</p>
+<p>The three turbines used in the power analysis are representative of a three turbine size categories.  The smallest turbine  <strong>[S]</strong> is applicable for a home or farm and has a rated power of 10kW. The medium turbine <strong>[M]</strong> is based on a commercial 1.5MW pitch controlled turbine. Thethird largest turbine <strong>[L]</strong> is based on a pitch controlled 3.4MW model, which is about as big as you can install onshore (<a href="http://windmonitor.iee.fraunhofer.de/windmonitor_de/3_Onshore/2_technik/4_anlagengroesse/" class="parenthetical" target="_blank">Fraunhofer IEE</a>). The data for the turbine models are in the table below. All turbines assume a peak efficiency of 48%. More information about turbine models is available <a href="https://en.wind-turbine-models.com/" class="parenthetical" target="_blank">here</a>. </p>
+
+<body>
+
+<p class="caption">Wind Turbine Models Table</p>
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+
+<table style="width:100%" class="table" >
+  <tr>
+<th> </th> <th>Power Rating <strong>[kw]</strong></th>    <th>Blade Length<strong>[m]</strong></th>     <th>Tower Height <strong>[m]</strong></th>
+  </tr>
+  <tr>
+   <th> S </th>  <td>10</td>     <td>3.4</td>     <td>27</td>
+  </tr>
+  <tr>
+   <th> M </th>  <td>1500</td>     <td>41</td>     <td>80</td>
+  </tr>
+  <tr>
+    <th> L </th> <td>3465</td>     <td>64.5</td>     <td>100</td>
+  </tr>
+</table>
+
+</body>
+<br>
+
+
+<p>For the power production, the density of air was assumed to be a standard 1.225 [kg/m<sup>3</sup>] and turbine availablity of 100%.</p>
+
+<p>The <a href="#powerCurve" target="_blank">power curve</a> is the amount of power a wind turbine produces at a given wind speed. The maximum is the rated power of the turbine. The wind turbine power production is dependent upon the wind speed. The formula used to calculate power production is given below.</p>
+
+<div class="equation">
+
+<p>$$P = 1/2 \cdot c_p \cdot \rho \cdot \pi \cdot R^2 \cdot v^3$$</p>
+
+<ul>
+  <li><p class="caption"> P - is the power produced [W]</p></li>
+   <li><p class="caption"> c<sub>p</sub> - is the coefficient of power for the turbine [%]</p></li>
+  <li><p class="caption"> &rho; - is the density of air [kg/m<sup>3</sup>]</p></li> 
+  <li><p class="caption"> R - is the length of a blade [m]</p></li>
+  <li><p class="caption"> <i>v</i> - is the wind speed at the wind turbine hub height [m/s]</p></li>
+</ul>
+</div>
+
+
+<p>The capacity factor is calculated using a Weibull wind speed probability distribution and a power curve from a wind turbine.</p>
+
+<h3>An example using Aachen data</h3>
+
+<p>The wind speed measurement data is fit to a Weibull probability function. This gives the probability distribution of the wind speeds at the site. These probabilities [%] are multiplied by the power curve [kW] for the turbine and summed to give the hours of production [kWh].  The hours of production are divided by the maximum production possible (turbine rated power multiplied by the hours in a year) to give the capacity factor. </p>
+
+<h4>Wind Speed Distribution</h4>
+
+<div>
+    <canvas id="probability_density" width="100" height="50"></canvas>
+    <script type="text/javascript" src="00003/dashboard_probability_density_00003.js"></script>   
+</div>
+ 
+<h4>Representative Power Curve</h4>
+
+<div>
+    <canvas id="powerCurve" width="100" height="50"></canvas>
+    <script type="text/javascript" src="powerCurve.js"></script>   
+</div>
+
+<div>
+<h3 id="estimated_production_about">Wind Turbine Production</h3>
+<p class="caption">Estimates by Turbine Model</p>
+<table id="estimated_production" class="table">
+<script type="text/javascript" src="dashboard_site_data_00003.json"></script>
+</table>
+
+<script>
+var aep = cp;
+var row_data = '<tr> <th>Turbine</th>  <th>Energy Production kWh</th></tr>';
+for (var i = 0; i < aep.length; i++) {
+var row_data = row_data + '<tr>' +
+' <td><strong>' + aep[i].turbine + '</strong></td>' +
+' <td>' + aep[i].AEP + '</td>' +
+'</tr>';
+}
+var table_body_element = document.createElement('tbody');
+table_body_element.innerHTML = row_data;
+document.getElementById('estimated_production').appendChild(table_body_element);
+</script>
+
+</div> 
+
+<p>The combination of the wind speed probability density and the power curve multiplied by the number of hours in a year produces the estimated energy production. The table above shows the estimated energy production for the Aachen site. If you know your local feed in tariff, you can estimate how much a wind turbine would produce in economic terms.</p>
+
+
+<!-- <div class="about_key_data">
+        <div>
+            <div>13,226</div>
+            <div>Years of Data</div>
+        </div><div>
+            <div>436</div>
+            <div>Wind Sites</div>
+        </div><div>
+            <div>1</div>
+            <div>Planet</div>
+        </div>
+    </div> -->
+
+<h3>Our Goal is Great Data for Wind Prospecting</h3>
+
+<p>OpenWind turns the DWD measurement data into useful information. This data can be used for a rough estimation of turbine production for sites near the measurement sites on the <a href="wind_map.html" target="_blank">map page</a>.  </p>
+
+<p>Higher resolution data (10 minute) and high quality computational estimates of local wind conditions are also available. </p>
+
+<p>For these more thorough localized results, please 
+  <a href="mailto:info@openwinddata.com?subject=Detailed%20wind%20data&body=To%20receive%20a%20detailed%20report%20of%20your%20site's%20wind%20data,%20please%20provide%20your%20contact%20information%20below.%20We%20will%20contact%20you%20within%2024%20hours.">contact us</a></p>
+
+<script type="text/javascript" src="tooltips.js"></script>  
+
+<br>
+<br>
+<br>
+<script type="text/javascript" src="menu.js"></script> 
+
+</body>
+
+</html>
