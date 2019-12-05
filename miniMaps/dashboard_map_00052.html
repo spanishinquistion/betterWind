@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_PREFER_CANVAS = false;
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.4.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.4.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_93856c94b85f40278e906351387c95a6 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_93856c94b85f40278e906351387c95a6" ></div>
+        
+</body>
+<script>    
+    
+                var bounds = null;
+
+            var map_93856c94b85f40278e906351387c95a6 = L.map(
+                "map_93856c94b85f40278e906351387c95a6",
+                {
+                    center: [53.6623, 10.199],
+                    zoom: 12,
+                    maxBounds: bounds,
+                    layers: [],
+                    worldCopyJump: false,
+                    crs: L.CRS.EPSG3857,
+                    zoomControl: true,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_2a0ac837cf8445949e2c5584e1af289a = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_93856c94b85f40278e906351387c95a6);
+        
+    
+            var marker_cluster_df6e4290cabf49f782609b674bb741b0 = L.markerClusterGroup(
+                {"maxWidth": 1200, "minWidth": 1200}
+            );
+            map_93856c94b85f40278e906351387c95a6.addLayer(marker_cluster_df6e4290cabf49f782609b674bb741b0);
+        
+    
+            var marker_f28f665f853d407cb05b9de2eea09912 = L.marker(
+                [53.6623, 10.199],
+                {}
+            ).addTo(marker_cluster_df6e4290cabf49f782609b674bb741b0);
+        
+    
+            var icon_b8981b59be694b289738e6a9e265bf6a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_f28f665f853d407cb05b9de2eea09912.setIcon(icon_b8981b59be694b289738e6a9e265bf6a);
+        
+</script>
