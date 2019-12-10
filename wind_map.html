@@ -27,7 +27,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_41a50da8f67444bdb7167924bbc27963 {
+                #map_0be51d8cb9764d8f83a28a0a0b3cbf2f {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -55,14 +55,14 @@
 
 
     
-            <div class="folium-map" id="map_41a50da8f67444bdb7167924bbc27963" ></div>
+            <div class="folium-map" id="map_0be51d8cb9764d8f83a28a0a0b3cbf2f" ></div>
 <!-- Stuff added at Wills request -->
 <div class="footer">
 <div> 
   <p>Datenbasis: Deutscher Wetterdienst, eigene Element ergänzt</p> 
 </div> 
 <div> 
-  <img alt="Deutscher Wetterdienst Logo" src="DWD_Logo.png"></img>
+  <img alt="Deutscher Wetterdienst Logo" src="webfiles/DWD_Logo.png"></img>
 </div> 
 </div> 
  
@@ -72,8 +72,8 @@
     
                 var bounds = null;
 
-            var map_41a50da8f67444bdb7167924bbc27963 = L.map(
-                "map_41a50da8f67444bdb7167924bbc27963",
+            var map_0be51d8cb9764d8f83a28a0a0b3cbf2f = L.map(
+                "map_0be51d8cb9764d8f83a28a0a0b3cbf2f",
                 {
                     center: [51.158627, 10.445921],
                     zoom: 7,
@@ -89,138 +89,138 @@
 
         
     
-            var tile_layer_e586880bb8ba4cdf94a8899614dda3bb = L.tileLayer(
+            var tile_layer_73d3d9794e204763959be6cfe496fa7f = L.tileLayer(
                 "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {"detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
-            ).addTo(map_41a50da8f67444bdb7167924bbc27963);
+            ).addTo(map_0be51d8cb9764d8f83a28a0a0b3cbf2f);
         
     
-            var marker_cluster_bf6eaea1a6914a909a83174213ba1c39 = L.markerClusterGroup(
+            var marker_cluster_9450034ab0254a55af1eefcdef6cbc04 = L.markerClusterGroup(
                 {"maxWidth": 1200, "minWidth": 1200}
             );
-            map_41a50da8f67444bdb7167924bbc27963.addLayer(marker_cluster_bf6eaea1a6914a909a83174213ba1c39);
+            map_0be51d8cb9764d8f83a28a0a0b3cbf2f.addLayer(marker_cluster_9450034ab0254a55af1eefcdef6cbc04);
         
     
-            var marker_6220c747d17740a3bd3135623dec06d0 = L.marker(
+            var marker_978dfa9c3574488e965fe12cade68fb1 = L.marker(
                 [50.7833, 6.0833],
                 {}
-            ).addTo(marker_cluster_bf6eaea1a6914a909a83174213ba1c39);
+            ).addTo(marker_cluster_9450034ab0254a55af1eefcdef6cbc04);
         
     
-            var icon_66cedf9e44d44a479d9214e473fc7215 = L.AwesomeMarkers.icon(
+            var icon_d49ab9debd9e44dc8d927dcb8fa97d97 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_6220c747d17740a3bd3135623dec06d0.setIcon(icon_66cedf9e44d44a479d9214e473fc7215);
+            marker_978dfa9c3574488e965fe12cade68fb1.setIcon(icon_d49ab9debd9e44dc8d927dcb8fa97d97);
         
     
-        var popup_c49191503a5f439f93cddfa3fea9a820 = L.popup({"maxWidth": "100%"});
+        var popup_e270d168bf3140798a5b7839c5b92bb4 = L.popup({"maxWidth": "100%"});
 
         
-            var html_cb899bafbf104401ace47252eb007b21 = $(`<div id="html_cb899bafbf104401ace47252eb007b21" class="mapmodule""><h3 class=locationName>Aachen</h3><h4 class="stateName">Nordrhein-Westfalen</h4><table class = "map_table"><tr><td>Data Available</td> <td>63.5</td> <td>years</td></tr><tr><td><a href="about.html ">Average Wind Speed</a></td><td>3.29</td><td>m/s</td></tr><tr><td><a href="about.html">Capacity Factor</a></td><td>6.92</td><td>%</td></tr></table><div class="button"><a href="00003/dashboard_00003.html">See Detailed Data</a></div></div></div>`)[0];
-            popup_c49191503a5f439f93cddfa3fea9a820.setContent(html_cb899bafbf104401ace47252eb007b21);
+            var html_766825001c5b4b55b80a9d33bed69f34 = $(`<div id="html_766825001c5b4b55b80a9d33bed69f34" class="mapmodule""><h3 class=locationName>Aachen</h3><h4 class="stateName">Nordrhein-Westfalen</h4><table class = "map_table"><tr><td>Data Available</td> <td>63.5</td> <td>years</td></tr><tr><td><a href="about.html ">Average Wind Speed</a></td><td>3.29</td><td>m/s</td></tr><tr><td><a href="about.html">Capacity Factor</a></td><td>6.92</td><td>%</td></tr></table><div class="button"><a href="00003/dashboard_00003.html">See Detailed Data</a></div></div></div>`)[0];
+            popup_e270d168bf3140798a5b7839c5b92bb4.setContent(html_766825001c5b4b55b80a9d33bed69f34);
         
 
-        marker_6220c747d17740a3bd3135623dec06d0.bindPopup(popup_c49191503a5f439f93cddfa3fea9a820)
+        marker_978dfa9c3574488e965fe12cade68fb1.bindPopup(popup_e270d168bf3140798a5b7839c5b92bb4)
         ;
 
         
     
     
-            var marker_d126d8087eb0491daf99b3257a5f2d7c = L.marker(
+            var marker_46889874633a486d8768ffa90523c88a = L.marker(
                 [47.95, 8.4667],
                 {}
-            ).addTo(marker_cluster_bf6eaea1a6914a909a83174213ba1c39);
+            ).addTo(marker_cluster_9450034ab0254a55af1eefcdef6cbc04);
         
     
-            var icon_5cbb8105f40f4f7da7dc83211462b718 = L.AwesomeMarkers.icon(
+            var icon_abaec83412834e17bb08cb7b766d6525 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_d126d8087eb0491daf99b3257a5f2d7c.setIcon(icon_5cbb8105f40f4f7da7dc83211462b718);
+            marker_46889874633a486d8768ffa90523c88a.setIcon(icon_abaec83412834e17bb08cb7b766d6525);
         
     
-        var popup_f5a582e890e44a9f98c719435564e1ae = L.popup({"maxWidth": "100%"});
+        var popup_a34985cb43a14e7ca467a01066b87018 = L.popup({"maxWidth": "100%"});
 
         
-            var html_f58cffd59c78472b93948fc08433f9fb = $(`<div id="html_f58cffd59c78472b93948fc08433f9fb" class="mapmodule""><h3 class=locationName>Donaueschingen (Landeplatz)</h3><h4 class="stateName">Baden-Württemberg</h4><table class = "map_table"><tr><td>Data Available</td> <td>30.2</td> <td>years</td></tr><tr><td><a href="about.html ">Average Wind Speed</a></td><td>2.45</td><td>m/s</td></tr><tr><td><a href="about.html">Capacity Factor</a></td><td>4.91</td><td>%</td></tr></table><div class="button"><a href="00011/dashboard_00011.html">See Detailed Data</a></div></div></div>`)[0];
-            popup_f5a582e890e44a9f98c719435564e1ae.setContent(html_f58cffd59c78472b93948fc08433f9fb);
+            var html_6e9c11ce6b9e41c9b62c5b5fb3906892 = $(`<div id="html_6e9c11ce6b9e41c9b62c5b5fb3906892" class="mapmodule""><h3 class=locationName>Donaueschingen (Landeplatz)</h3><h4 class="stateName">Baden-Württemberg</h4><table class = "map_table"><tr><td>Data Available</td> <td>30.2</td> <td>years</td></tr><tr><td><a href="about.html ">Average Wind Speed</a></td><td>2.45</td><td>m/s</td></tr><tr><td><a href="about.html">Capacity Factor</a></td><td>4.91</td><td>%</td></tr></table><div class="button"><a href="00011/dashboard_00011.html">See Detailed Data</a></div></div></div>`)[0];
+            popup_a34985cb43a14e7ca467a01066b87018.setContent(html_6e9c11ce6b9e41c9b62c5b5fb3906892);
         
 
-        marker_d126d8087eb0491daf99b3257a5f2d7c.bindPopup(popup_f5a582e890e44a9f98c719435564e1ae)
+        marker_46889874633a486d8768ffa90523c88a.bindPopup(popup_a34985cb43a14e7ca467a01066b87018)
         ;
 
         
     
     
-            var marker_87a44e7737c24676a95bad0dbf5f98a6 = L.marker(
+            var marker_fda8fe8e6ca644c395f3c0fea6278f67 = L.marker(
                 [52.8846, 8.2308],
                 {}
-            ).addTo(marker_cluster_bf6eaea1a6914a909a83174213ba1c39);
+            ).addTo(marker_cluster_9450034ab0254a55af1eefcdef6cbc04);
         
     
-            var icon_524c011726ad4e6198291d0248b648d9 = L.AwesomeMarkers.icon(
+            var icon_5afe6a39bf474c57a3b1770a7b1106bc = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_87a44e7737c24676a95bad0dbf5f98a6.setIcon(icon_524c011726ad4e6198291d0248b648d9);
+            marker_fda8fe8e6ca644c395f3c0fea6278f67.setIcon(icon_5afe6a39bf474c57a3b1770a7b1106bc);
         
     
-        var popup_a4fbf6a7f7ea48e89d47e24f12ac903f = L.popup({"maxWidth": "100%"});
+        var popup_d11026f49aaa42fca275992102e4aa54 = L.popup({"maxWidth": "100%"});
 
         
-            var html_e4d63eaf0c8a4afdbe801728dd066f16 = $(`<div id="html_e4d63eaf0c8a4afdbe801728dd066f16" class="mapmodule""><h3 class=locationName>Großenkneten</h3><h4 class="stateName">Niedersachsen</h4><table class = "map_table"><tr><td>Data Available</td> <td>26.9</td> <td>years</td></tr><tr><td><a href="about.html ">Average Wind Speed</a></td><td>3.97</td><td>m/s</td></tr><tr><td><a href="about.html">Capacity Factor</a></td><td>13.2</td><td>%</td></tr></table><div class="button"><a href="00044/dashboard_00044.html">See Detailed Data</a></div></div></div>`)[0];
-            popup_a4fbf6a7f7ea48e89d47e24f12ac903f.setContent(html_e4d63eaf0c8a4afdbe801728dd066f16);
+            var html_c53fb15182134b6d8e2be10c89873279 = $(`<div id="html_c53fb15182134b6d8e2be10c89873279" class="mapmodule""><h3 class=locationName>Großenkneten</h3><h4 class="stateName">Niedersachsen</h4><table class = "map_table"><tr><td>Data Available</td> <td>26.9</td> <td>years</td></tr><tr><td><a href="about.html ">Average Wind Speed</a></td><td>3.97</td><td>m/s</td></tr><tr><td><a href="about.html">Capacity Factor</a></td><td>13.2</td><td>%</td></tr></table><div class="button"><a href="00044/dashboard_00044.html">See Detailed Data</a></div></div></div>`)[0];
+            popup_d11026f49aaa42fca275992102e4aa54.setContent(html_c53fb15182134b6d8e2be10c89873279);
         
 
-        marker_87a44e7737c24676a95bad0dbf5f98a6.bindPopup(popup_a4fbf6a7f7ea48e89d47e24f12ac903f)
+        marker_fda8fe8e6ca644c395f3c0fea6278f67.bindPopup(popup_d11026f49aaa42fca275992102e4aa54)
         ;
 
         
     
     
-            var marker_2ec6dc711177472aa8ece89ff775df61 = L.marker(
+            var marker_86f0845838c7419a945be1bccc2ed1c9 = L.marker(
                 [53.6623, 10.199],
                 {}
-            ).addTo(marker_cluster_bf6eaea1a6914a909a83174213ba1c39);
+            ).addTo(marker_cluster_9450034ab0254a55af1eefcdef6cbc04);
         
     
-            var icon_e9ec62db37d549ceaf1660b2643d9d06 = L.AwesomeMarkers.icon(
+            var icon_f440ba6cc9dc4ca6b32c959e36f13758 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_2ec6dc711177472aa8ece89ff775df61.setIcon(icon_e9ec62db37d549ceaf1660b2643d9d06);
+            marker_86f0845838c7419a945be1bccc2ed1c9.setIcon(icon_f440ba6cc9dc4ca6b32c959e36f13758);
         
     
-        var popup_8a9c6a41a6e1419f84789b516fffcd2f = L.popup({"maxWidth": "100%"});
+        var popup_7868bcffe7b24f06b1acf6b4751384d8 = L.popup({"maxWidth": "100%"});
 
         
-            var html_4711bd5def0c40cbbfdc0febf517a05e = $(`<div id="html_4711bd5def0c40cbbfdc0febf517a05e" class="mapmodule""><h3 class=locationName>Ahrensburg-Wulfsdorf</h3><h4 class="stateName">Schleswig-Holstein</h4><table class = "map_table"><tr><td>Data Available</td> <td>32.2</td> <td>years</td></tr><tr><td><a href="about.html ">Average Wind Speed</a></td><td>2.9</td><td>m/s</td></tr><tr><td><a href="about.html">Capacity Factor</a></td><td>6.06</td><td>%</td></tr></table><div class="button"><a href="00052/dashboard_00052.html">See Detailed Data</a></div></div></div>`)[0];
-            popup_8a9c6a41a6e1419f84789b516fffcd2f.setContent(html_4711bd5def0c40cbbfdc0febf517a05e);
+            var html_e8d2c56412154e96b070b40f8ba069d4 = $(`<div id="html_e8d2c56412154e96b070b40f8ba069d4" class="mapmodule""><h3 class=locationName>Ahrensburg-Wulfsdorf</h3><h4 class="stateName">Schleswig-Holstein</h4><table class = "map_table"><tr><td>Data Available</td> <td>32.2</td> <td>years</td></tr><tr><td><a href="about.html ">Average Wind Speed</a></td><td>2.9</td><td>m/s</td></tr><tr><td><a href="about.html">Capacity Factor</a></td><td>6.06</td><td>%</td></tr></table><div class="button"><a href="00052/dashboard_00052.html">See Detailed Data</a></div></div></div>`)[0];
+            popup_7868bcffe7b24f06b1acf6b4751384d8.setContent(html_e8d2c56412154e96b070b40f8ba069d4);
         
 
-        marker_2ec6dc711177472aa8ece89ff775df61.bindPopup(popup_8a9c6a41a6e1419f84789b516fffcd2f)
+        marker_86f0845838c7419a945be1bccc2ed1c9.bindPopup(popup_7868bcffe7b24f06b1acf6b4751384d8)
         ;
 
         
     
     
-            var marker_72cc7cd13e7643acbaa877bcbbb57928 = L.marker(
+            var marker_f40fc0683ae1462db1e8242aa2c89b21 = L.marker(
                 [48.2766, 9.0001],
                 {}
-            ).addTo(marker_cluster_bf6eaea1a6914a909a83174213ba1c39);
+            ).addTo(marker_cluster_9450034ab0254a55af1eefcdef6cbc04);
         
     
-            var icon_b81361c072b94cadbd6a1d588ae7f380 = L.AwesomeMarkers.icon(
+            var icon_c64d27fcfadb4023b8be31c2301a66af = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_72cc7cd13e7643acbaa877bcbbb57928.setIcon(icon_b81361c072b94cadbd6a1d588ae7f380);
+            marker_f40fc0683ae1462db1e8242aa2c89b21.setIcon(icon_c64d27fcfadb4023b8be31c2301a66af);
         
     
-        var popup_a62460382bef46fc975f59ef195506a2 = L.popup({"maxWidth": "100%"});
+        var popup_fd2e90b4f238433a9a40be42bcd39007 = L.popup({"maxWidth": "100%"});
 
         
-            var html_658ec60da7d6408ea5adbcd05ac01a6f = $(`<div id="html_658ec60da7d6408ea5adbcd05ac01a6f" class="mapmodule""><h3 class=locationName>Albstadt-Onstmettingen</h3><h4 class="stateName">Baden-Württemberg</h4><table class = "map_table"><tr><td>Data Available</td> <td>16.2</td> <td>years</td></tr><tr><td><a href="about.html ">Average Wind Speed</a></td><td>2.04</td><td>m/s</td></tr><tr><td><a href="about.html">Capacity Factor</a></td><td>5.67</td><td>%</td></tr></table><div class="button"><a href="00072/dashboard_00072.html">See Detailed Data</a></div></div></div>`)[0];
-            popup_a62460382bef46fc975f59ef195506a2.setContent(html_658ec60da7d6408ea5adbcd05ac01a6f);
+            var html_f467d77e3e4948e196afb4cc7f49c047 = $(`<div id="html_f467d77e3e4948e196afb4cc7f49c047" class="mapmodule""><h3 class=locationName>Albstadt-Onstmettingen</h3><h4 class="stateName">Baden-Württemberg</h4><table class = "map_table"><tr><td>Data Available</td> <td>16.2</td> <td>years</td></tr><tr><td><a href="about.html ">Average Wind Speed</a></td><td>2.04</td><td>m/s</td></tr><tr><td><a href="about.html">Capacity Factor</a></td><td>5.67</td><td>%</td></tr></table><div class="button"><a href="00072/dashboard_00072.html">See Detailed Data</a></div></div></div>`)[0];
+            popup_fd2e90b4f238433a9a40be42bcd39007.setContent(html_f467d77e3e4948e196afb4cc7f49c047);
         
 
-        marker_72cc7cd13e7643acbaa877bcbbb57928.bindPopup(popup_a62460382bef46fc975f59ef195506a2)
+        marker_f40fc0683ae1462db1e8242aa2c89b21.bindPopup(popup_fd2e90b4f238433a9a40be42bcd39007)
         ;
 
         

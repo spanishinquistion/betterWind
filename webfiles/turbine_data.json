@@ -1,0 +1,6 @@
+var turbine_data  =  {} 
+turbine_data.model  = ["S", "M", "L"] 
+turbine_data.h  = [30, 80, 100] 
+turbine_data.Cp  = [0.48, 0.48, 0.48] 
+turbine_data.R  = [3.5, 41, 64.5] 
+turbine_data.Pr  = [10000.0, 1500000.0, 3460000.0] 

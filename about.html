@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<script type="text/javascript" src="00003/dashboard_site_data_00003.json"></script> 
+<script type="text/javascript" src="webfiles/turbine_data.json"></script> 
+<script type="text/javascript" src="def/def_pdf.js"></script>
+
 <html>
 <head>
 <title>OpenWind - Your source for renewable energy data</title>
@@ -90,7 +94,7 @@
 
 <ul>
   <li>Average wind speed projected to prospective hub heights <strong>[<span style="letter-spacing: -2px">V</span><sub>AVE</sub>]</strong></li>
-  <li>Wind Speed Distribution <strong>[%/kWH]</strong></li>
+  <li>Wind Speed Distribution <strong>[%]</strong></li>
   <li>Capacity Factor/Potential Power Production <strong>[%/kWH]</strong></li>
 </ul>
 
@@ -107,10 +111,11 @@
   <li><p class="caption">v<sub>1</sub> - is the wind speed at the measurement height</li>
   <li><p class="caption">h<sub>1</sub> - is the height at which the wind speed is measured</li>
   <li><p class="caption">h<sub>2</sub> - is the wind turbine hub height</li>
+  <li><p class="caption">z<sub>0</sub> - is the surface roughness (estimate)</li>
 </ul>
 </div>
 
-<p>Obstacles at a site increase the surface roughness (z<sub>0</sub>) and in turn lower the speed of the wind as height increases.</p>
+<p>Obstacles at a site increase the surface roughness (z<sub>0</sub>) and in turn lower the speed of the wind as height increases. By default this is set to 0.05 representing rural sites.</p>
 
 <h4>Wind Speed Probability Distribution</h4>
 <p>The wind speed varies at a given site and the standard distribution that fits best to the wind speed distribution is the Weibull. A full description is available at <a href="https://en.wikipedia.org/wiki/Weibull_distribution" target="_blank">Wikipedia</a>. Using the industry standard Weibull distributon allows for a complete estimation of the wind speed probability distribution. </p>
@@ -126,32 +131,25 @@
 <p>With a site wind speed distribution vector and a power curve vector from a turbine you can estimate the power production.</p>
 <p>The three turbines used in the power analysis are representative of a three turbine size categories.  The smallest turbine  <strong>[S]</strong> is applicable for a home or farm and has a rated power of 10kW. The medium turbine <strong>[M]</strong> is based on a commercial 1.5MW pitch controlled turbine. Thethird largest turbine <strong>[L]</strong> is based on a pitch controlled 3.4MW model, which is about as big as you can install onshore (<a href="http://windmonitor.iee.fraunhofer.de/windmonitor_de/3_Onshore/2_technik/4_anlagengroesse/" class="parenthetical" target="_blank">Fraunhofer IEE</a>). The data for the turbine models are in the table below. All turbines assume a peak efficiency of 48%. More information about turbine models is available <a href="https://en.wind-turbine-models.com/" class="parenthetical" target="_blank">here</a>. </p>
 
-<body>
-
-<p class="caption">Wind Turbine Models Table</p>
-<style>
-table, th, td {
-  border: 1px solid black;
-}
-</style>
-
-<table style="width:100%" class="table" >
-  <tr>
-<th> </th> <th>Power Rating <strong>[kw]</strong></th>    <th>Blade Length<strong>[m]</strong></th>     <th>Tower Height <strong>[m]</strong></th>
-  </tr>
-  <tr>
-   <th> S </th>  <td>10</td>     <td>3.4</td>     <td>27</td>
-  </tr>
-  <tr>
-   <th> M </th>  <td>1500</td>     <td>41</td>     <td>80</td>
-  </tr>
-  <tr>
-    <th> L </th> <td>3465</td>     <td>64.5</td>     <td>100</td>
-  </tr>
+<div>
+<h3 id="estimated_production_about">Wind Turbine Models</h3>
+<table id="wind_turbine_models" class="table">
 </table>
 
-</body>
-<br>
+<script>
+var row_data = '<tr> <th></th><th>Power Rating [kW]</th>  <th>Blade Length [m]</th> <th>Tower Height [m]</th> </tr>';
+for (var i = 0; i < turbine_data.h.length; i++) {
+var row_data = row_data + '<tr>' +
+' <th><strong>' + turbine_data.model[i] + '</strong></th>' +
+' <td>' + (turbine_data.Pr[i]/1000).toFixed(0) + '</td>' +
+' <td>' + turbine_data.R[i].toFixed(1) + '</td>' +
+' <td>' + turbine_data.h[i].toFixed(0) + '</td>' +
+'</tr>';
+}
+var table_body_element = document.createElement('tbody');
+table_body_element.innerHTML = row_data;
+document.getElementById('wind_turbine_models').appendChild(table_body_element);
+</script>
 
 
 <p>For the power production, the density of air was assumed to be a standard 1.225 [kg/m<sup>3</sup>] and turbine availablity of 100%.</p>
@@ -180,32 +178,34 @@ table, th, td {
 
 <h4>Wind Speed Distribution</h4>
 
+
 <div>
-    <canvas id="probability_density" width="100" height="50"></canvas>
-    <script type="text/javascript" src="00003/dashboard_probability_density_00003.js"></script>   
+    <canvas id="probability_density"></canvas>
+    <script>pdf_plot(pdf_data);</script>
 </div>
+
+
  
 <h4>Representative Power Curve</h4>
 
 <div>
     <canvas id="powerCurve" width="100" height="50"></canvas>
-    <script type="text/javascript" src="powerCurve.js"></script>   
+    <script type="text/javascript" src="webfiles/powerCurve.js"></script>   
 </div>
 
 <div>
 <h3 id="estimated_production_about">Wind Turbine Production</h3>
 <p class="caption">Estimates by Turbine Model</p>
 <table id="estimated_production" class="table">
-<script type="text/javascript" src="dashboard_site_data_00003.json"></script>
 </table>
 
 <script>
-var aep = cp;
-var row_data = '<tr> <th>Turbine</th>  <th>Energy Production kWh</th></tr>';
-for (var i = 0; i < aep.length; i++) {
+var row_data = '<tr> <th>Turbine</th>  <th>Energy Production kWh</th> <th>Capacity Factor [%]</th> </tr>';
+for (var i = 0; i < production.c_p.length; i++) {
 var row_data = row_data + '<tr>' +
-' <td><strong>' + aep[i].turbine + '</strong></td>' +
-' <td>' + aep[i].AEP + '</td>' +
+' <td><strong>' + turbine_data.model[i] + '</strong></td>' +
+' <td>' + production.AEP[i] + '</td>' +
+' <td>' + production.c_p[i].toFixed(1) + '</td>' +
 '</tr>';
 }
 var table_body_element = document.createElement('tbody');
@@ -218,18 +218,6 @@ document.getElementById('estimated_production').appendChild(table_body_element);
 <p>The combination of the wind speed probability density and the power curve multiplied by the number of hours in a year produces the estimated energy production. The table above shows the estimated energy production for the Aachen site. If you know your local feed in tariff, you can estimate how much a wind turbine would produce in economic terms.</p>
 
 
-<!-- <div class="about_key_data">
-        <div>
-            <div>13,226</div>
-            <div>Years of Data</div>
-        </div><div>
-            <div>436</div>
-            <div>Wind Sites</div>
-        </div><div>
-            <div>1</div>
-            <div>Planet</div>
-        </div>
-    </div> -->
 
 <h3>Our Goal is Great Data for Wind Prospecting</h3>
 
@@ -240,13 +228,25 @@ document.getElementById('estimated_production').appendChild(table_body_element);
 <p>For these more thorough localized results, please 
   <a href="mailto:info@openwinddata.com?subject=Detailed%20wind%20data&body=To%20receive%20a%20detailed%20report%20of%20your%20site's%20wind%20data,%20please%20provide%20your%20contact%20information%20below.%20We%20will%20contact%20you%20within%2024%20hours.">contact us</a></p>
 
-<script type="text/javascript" src="tooltips.js"></script>  
+<script type="text/javascript" src="webfiles/tooltips.js"></script>  
 
 <br>
 <br>
 <br>
 <script type="text/javascript" src="webfiles/menu.js"></script> 
 
+<div class="about_key_data">
+        <div>
+            <div>13,226</div>
+            <div>Years of Data</div>
+        </div><div>
+            <div>436</div>
+            <div>Wind Sites</div>
+        </div><div>
+            <div>1</div>
+            <div>Planet</div>
+        </div>
+    </div>
 </body>
 
 </html>
