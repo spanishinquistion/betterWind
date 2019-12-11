@@ -105,9 +105,10 @@ h1 {
   font-size: 2em;
   line-height: 1em;
   color: #2E4052;
+  text-transform: uppercase;
 }
 
-h2, h3, h4 {
+h2, h3, h4 , h5 {
   margin: 0 0 1em 0;
   padding: 1em 0 0.5em 0;
   font-weight: 800;
@@ -133,6 +134,14 @@ h4 {
   color: #2E4052;
   padding-bottom: 0;
   line-height: .5em;
+}
+h5 {
+  font-weight: 400;
+  font-size: 1.2em;
+  color: #2E4052;
+  text-transform: uppercase;
+  opacity: 0.5;  
+  line-height: .01em;
 }
 
 em {

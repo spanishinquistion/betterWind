@@ -54,20 +54,26 @@
     <div class=site_map_div>
       <object type="text/html" class="site_map" data="../miniMaps/dashboard_map_00003.html"></object>
     </div>
-  <div class="key_data">
-    <div>
-        <div>Average Wind Speed</div>
-        <div> <script>document.write(site_data.v_ave);</script> </div>
-        <div>meters / second</div>
-    </div>
-    <div>
-        <div>Capacity Factor</div>
-        <div>  <script>document.write(site_data.c_p);</script></div>
-        <div>percent</div>
-    </div>
-  </div>
 </div>
 
+<div class="cell cell_factoids">
+<div class="key_data">
+  <div>
+    <div>Average Wind Speed</div>
+    <div> <script>document.write(site_data.v_ave);</script> </div>
+    <div>meters / second</div>
+    </div>
+    <div>
+    <div>Capacity Factor</div>
+    <div><script>document.write(site_data.c_p);</script></div>
+    <div>Percent</div>
+    </div>
+    <div>
+  <div>Most recent </div>
+    <div>  <script>document.write(last_check);</script></div>
+  <div>Page Update</div>
+  </div>
+</div>
 
 <div class="cell cell_recording_history">
         <h3 class="tooltip">Wind Turbine Estimated Production<span class="tooltiptext">Potential energy a turbine could produce in a year. <a href="about.html">More</a></span></h3>

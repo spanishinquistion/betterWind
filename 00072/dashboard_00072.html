@@ -42,23 +42,32 @@
 <div class="cell cell_header_new">
   <div class="site_name">
     <h1><script>document.write(site_data.site);</script></h1>
-    <p><script>document.write(site_data.land);</script></p>
-    <p><script>document.write(site_data.lat),document.write(', '),document.write(site_data.lon);</script></p>
+    <h5><script>document.write(site_data.land);</script></h5>
+    <h5><script>document.write('Latitude '),document.write(site_data.lat);</script></h5>
+    <h5><script>document.write('Longitude'),document.write(site_data.lon);</script></h5>
   </div>
     <div class=site_map_div>
       <object type="text/html" class="site_map" data="../miniMaps/dashboard_map_00072.html"></object>
     </div>
-  <div class="key_data">
-    <div>
-        <div>Average Wind Speed</div>
-        <div> <script>document.write(site_data.v_ave);</script> </div>
-        <div>meters / second</div>
+  </div>
+
+
+<div class="cell cell_factoids">
+<div class="key_data">
+  <div>
+    <div>Average Wind Speed</div>
+    <div> <script>document.write(site_data.v_ave);</script> </div>
+    <div>meters / second</div>
     </div>
     <div>
-        <div>Capacity Factor</div>
-        <div>  <script>document.write(site_data.c_p);</script></div>
-        <div>percent</div>
+    <div>Capacity Factor</div>
+    <div><script>document.write(site_data.c_p);</script></div>
+    <div>Percent</div>
     </div>
+    <div>
+  <div>Most recent </div>
+    <div>  <script>document.write(last_check);</script></div>
+  <div>Page Update</div>
   </div>
 </div>
 
