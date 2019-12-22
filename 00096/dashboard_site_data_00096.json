@@ -1,0 +1,49 @@
+var site_data = {} 
+site_data.site = "Neuruppin-Alt Ruppin";
+site_data.land = "Brandenburg";
+site_data.c_p = "1.98";
+site_data.v_ave = "2.34";
+site_data.years = "0.7";
+site_data.years10min = "0";
+site_data.last = "2019-12-21";
+site_data.LAST_UPDATE = "2019-12-21";
+site_data.prevailing_wind_dir = "W";
+site_data.lat = "52.9479";
+site_data.lon = "12.8622";
+
+var meas_height = {} 
+meas_height.year_start = ["04/2019"]
+meas_height.year_end = ["12/2019"]
+meas_height.h_m = [12.0]
+
+var production = {} 
+production.turbine = ["S", "M", "L"]
+production.c_p = [1.05, 1.87, 1.98]
+production.AEP = ["920", "245,754", "600,925"]
+production.P_R = [10, 1500, 3460]
+
+var v_ave = {} 
+v_ave.turbine = ["S", "M", "L"]
+v_ave.S = [2.73]
+v_ave.M = [3.14]
+v_ave.L = [3.24]
+v_ave.h_m = [2.34]
+v_ave.year = [2019]
+v_ave.h_h = [30, 80, 100]
+
+var wind_rose_data_m0 = {} 
+wind_rose_data_m0.month = 0 
+wind_rose_data_m0.max_p = 15.0
+wind_rose_data_m0.data = [3.28, 3.88, 6.05, 7.48, 11.54, 3.67, 4.01, 4.01, 7.59, 6.45, 5.84, 9.61, 14.14, 6.49, 3.71, 2.24]
+
+var pdf_data = {} 
+pdf_data = {} 
+pdf_data.data = [13.51, 22.17, 23.19, 18.38, 11.65, 6.05, 2.6, 0.93, 0.28, 0.07, 0.02, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+pdf_data.V_range = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+pdf_data.font_1 = 18
+
+var data_quality = {} 
+data_quality.years = []
+data_quality.quality = []
+data_quality.ymin = "N/A"
+var last_check = "2019-12-22" 

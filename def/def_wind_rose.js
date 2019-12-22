@@ -1,16 +1,11 @@
 function wind_rose_plot(wind_rose_data) {
 
 var chart_name = 'wind_rose' + wind_rose_data.month
-//var line_width = 4 
-//var plot_center_x = 250 
-//var plot_center_y = 250 
-//var rose_radius = 200 
-//var font_size = 18 
+
 var line_color = 'lightGray'
-//var wind_rose_data.month = 0
 
 // color, lines and text size
-var wind_rose_color = ['blue','cyan','lightGreen','yellow','orange','red']
+var wind_rose_color = ['DeepSkyBlue','cyan','lightGreen','Gold ','orange','red']
 
 if (wind_rose_data.month == 0) {
    var line_width = 4 
@@ -40,8 +35,16 @@ windRosecolor=wind_rose_color[wind_rose_data.month-1]
 var radial_lines = 5
 var font_1 = font_size + 'px arial'
 var map_dir = ['E','SE','S','SW','W','NW','N','NE']
-var map_dir_delta_x = [font_size/4,0,-font_size/4,0,-font_size,0,-font_size/4,0]
-var map_dir_delta_y = [font_size/4,0,font_size,0,font_size/4,0,-font_size/2,0]
+//var map_dir_delta_x = [font_size/4,0,-font_size/4,0,-font_size,0,-font_size/4,0]
+//var map_dir_delta_y = [font_size/4,0,font_size,0,font_size/4,0,-font_size/2,0]
+var f4 = font_size/4
+var f2 = font_size/2
+var f0 = font_size
+var fx1_5 = 1.5*font_size
+var map_dir_delta_x = [f4,f2,-f4,-fx1_5,-f0,-f0,-f4,f2]
+
+var map_dir_delta_y = [f4,f0,f0,fx1_5,f4,-f0,-f2,-f4]
+
 var gap = 5;
 var arrayLength = wind_rose_data.data.length
 var percent_val = Math.ceil(wind_rose_data.max_p/5)*5
@@ -73,8 +76,8 @@ for(i = 0; i < 8 ; i++){
     y2 = plot_center_y + rl * Math.sin(angle )
     ctx.moveTo( plot_center_x, plot_center_y)
     ctx.lineTo(x2,y2);
-    if ( i % 2 == 0) {
-        ctx.fillText(map_dir[i], x2+map_dir_delta_x[i] , y2+map_dir_delta_y[i])
+    if ( wind_rose_data.month == 0) {
+    ctx.fillText(map_dir[i], x2+map_dir_delta_x[i] , y2+map_dir_delta_y[i])
     }
 }
 ctx.stroke();
