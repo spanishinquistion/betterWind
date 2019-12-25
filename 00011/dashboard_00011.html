@@ -1,6 +1,7 @@
 <!-- 00011 dashboard html input file --> 
 <META HTTP-EQUIV="content-type" CONTENT="text/html; charset=utf-8">
 <script type="text/javascript" src="dashboard_site_data_00011.json"></script> 
+<script type="text/javascript" src="../extra_files/data_check_js.json"></script> 
 
 <!DOCTYPE html>
 <html>
@@ -42,14 +43,22 @@
 <div class="cell cell_header_new">
   <div class="site_name">
     <h1><script>document.write(site_data.site);</script></h1>
-    <h5><script>document.write(site_data.land);</script></h5>
-    <h5><script>document.write('Latitude '),document.write(site_data.lat);</script></h5>
-    <h5><script>document.write('Longitude'),document.write(site_data.lon);</script></h5>
-  </div>
-    <div class=site_map_div>
-      <object type="text/html" class="site_map" data="../miniMaps/dashboard_map_00011.html"></object>
+    <h5><nobr><script>document.write(site_data.land);</script></nobr></h5>
+    <h5><script>document.write('Latitude: '),document.write(site_data.lat);</script></h5>
+    <h5><script>document.write('Longitude: '),document.write(site_data.lon);</script></h5>
+    <div class="key_data">
+      <div>
+        <div><nobr><script>document.write(site_data.land);</script></nobr></div>
+        <div><nobr><script>document.write(data_check.s00011[1]);</script></nobr></div>
+        <div> <script>document.write('Ranking');</script></div>
     </div>
   </div>
+</div>
+<div class=site_map_div>
+    <object type="text/html" class="site_map" data="../miniMaps/dashboard_map_00011.html"></object>
+  </div>
+</div>
+
 
 
 <div class="cell cell_factoids_start">
@@ -66,7 +75,7 @@
     </div>
     <div>
       <div>Most recent </div>
-      <div>  <script>document.write(last_check);</script></div>
+      <div>  <script>document.write(data_check.s00011[0]);</script></div>
       <div>Page Update</div>
     </div>
   </div>

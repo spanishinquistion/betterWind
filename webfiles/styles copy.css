@@ -953,9 +953,14 @@ font-weight: 400;
   margin-bottom: 10px;
 }
 
-.cell_recording_history {
+.cell_factoids_start {
   grid-column: 1 / 5 ;
   grid-row: 2 / 3 ;
+}
+
+.cell_recording_history {
+  grid-column: 1 / 5 ;
+  grid-row: 3 / 4 ;
 }
 
 .cell_wind_history {
@@ -997,7 +1002,7 @@ font-weight: 400;
   grid-row: 8 / 9 ;
 }
 
-.cell_factoids {
+.cell_factoids_end {
   grid-column: 1 / 5 ;
   grid-row: 9 / 10 ;
 }
