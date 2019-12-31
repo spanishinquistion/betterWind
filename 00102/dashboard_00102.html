@@ -22,7 +22,7 @@
 
   <script type="text/javascript" src="../webfiles/Chart.js"></script>  
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!--   <link rel="stylesheet" type="text/css" href="menu.css"> -->
+  <script> var href_info = document.write(site_data.site) </script>
 </head>
 <body>
 
@@ -141,8 +141,9 @@
   </div>
 </div>
 
+
 <p>This is a preliminary report based on hourly data (data averaged every hour). We generate detailed reports on demand. This includes processing the industry standard ten-minute data from publicly available DWD data. The higher resolution data analysis provides more accurate estimates and is the measuring frequency used in industry.</p>
-<div class="button"><a href="mailto:info@openwinddata.com?subject=Detailed%20wind%20data%20SITE - 00102 Aachen&body=To%20receive%20a%20detailed%20report%20of%20your%20site's%20wind%20data,%20please%20provide%20your%20contact%20information%20below.%20We%20will%20contact%20you%20as%20soon%20as%20possible.">Request a detailed report</a>
+<div class="button"><script>document.write('<a href=mailto:' + owd_email  + '?subject=Detailed%20wind%20data%20SITE%20-%20' + site_data.number + "%20"   + site_data.site + ",%20"   + site_data.land+ '>' + "Request a detailed report" + '</a>')</script>
 </div>
 
 <script>
