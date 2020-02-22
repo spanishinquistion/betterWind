@@ -19,6 +19,7 @@ try_production.AEP = ["7,616", "1,604,757", "4,259,477"]
 try_production.P_R = [10, 1500, 3460]
 
 var try_v_ave = {} 
+try_v_ave.type = "try_"
 try_v_ave.turbine = ["S", "M", "L"]
 try_v_ave.h_h = [30, 80, 100]
 try_v_ave.year = [1995, 1996, 1997, 1998, 1999, 2000]
@@ -84,7 +85,20 @@ var try_pdf_data = {}
 try_pdf_data = {} 
 try_pdf_data.data = [3.76, 7.32, 10.13, 11.87, 12.47, 12.01, 10.75, 9.02, 7.12, 5.31, 3.75, 2.5, 1.59, 0.96, 0.55, 0.3, 0.16, 0.08, 0.04, 0.02, 0.01, 0.0, 0.0, 0.0]
 try_pdf_data.V_range = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+try_pdf_data.pdf_mask = true
 try_pdf_data.font_1 = 18
+
+var try_near_comp = {} <!-- _near_comp site, name, distance, v_ave, cp(3) -->
+try_near_comp.site_number=["00044", "01503", "03791"]
+try_near_comp.name=["Großenkneten", "Friesoythe-Altenoythe", "Oldenburg"]
+try_near_comp.distance=[0.45, 29.14, 32.42]
+try_near_comp.v_ave=[3.97, 3.95, 3.63]
+try_near_comp.cp_s=[8.37, 7.87, 6.62]
+try_near_comp.cp_m=[11.64, 11.07, 9.35]
+try_near_comp.cp_l=[13.29, 12.72, 10.7]
+
+var try_report_link = {} 
+try_report_link = "https://www.dwd.de/DE/leistungen/testreferenzjahre/testreferenzjahre.html;jsessionid=CC9FB95EC0D9FEF8737B298330325F68.live11053?nn=507312"
 
 var try_monthly_v_ave = {} 
 try_monthly_v_ave.m_v_ave = [4.82, 5.46, 4.89, 4.02, 3.72, 3.71, 3.65, 3.34, 3.54, 4.17, 4.13, 4.66] 
@@ -97,4 +111,4 @@ try_hour_v_ave.hour_v_ave = [3.65, 3.63, 3.63, 3.62, 3.63, 3.66, 3.78, 3.99, 4.2
 try_hour_v_ave.std_v_minus = [2.57, 2.55, 2.55, 2.54, 2.53, 2.55, 2.7, 2.92, 3.19, 3.43, 3.65, 3.82, 3.94, 3.94, 3.91, 3.76, 3.58, 3.38, 3.13, 2.91, 2.77, 2.71, 2.64, 2.59] 
 try_hour_v_ave.std_v_plus = [4.73, 4.71, 4.7, 4.7, 4.72, 4.76, 4.86, 5.06, 5.32, 5.63, 5.89, 6.07, 6.22, 6.24, 6.18, 5.96, 5.71, 5.42, 5.16, 4.93, 4.8, 4.76, 4.71, 4.7] 
 try_hour_v_ave.hour_v_max = 5.09 
-var last_check = "2020-02-08" 
+var last_check = "2020-02-22" 

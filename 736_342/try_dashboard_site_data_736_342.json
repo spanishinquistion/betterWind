@@ -19,6 +19,7 @@ try_production.AEP = ["7,090", "1,510,043", "4,033,394"]
 try_production.P_R = [10, 1500, 3460]
 
 var try_v_ave = {} 
+try_v_ave.type = "try_"
 try_v_ave.turbine = ["S", "M", "L"]
 try_v_ave.h_h = [30, 80, 100]
 try_v_ave.year = [1995, 1996, 1997, 1998, 1999, 2000]
@@ -84,7 +85,20 @@ var try_pdf_data = {}
 try_pdf_data = {} 
 try_pdf_data.data = [2.73, 6.18, 9.39, 11.78, 13.0, 12.95, 11.8, 9.92, 7.72, 5.57, 3.74, 2.33, 1.36, 0.73, 0.37, 0.17, 0.07, 0.03, 0.01, 0.0, 0.0, 0.0, 0.0, 0.0]
 try_pdf_data.V_range = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+try_pdf_data.pdf_mask = true
 try_pdf_data.font_1 = 18
+
+var try_near_comp = {} <!-- _near_comp site, name, distance, v_ave, cp(3) -->
+try_near_comp.site_number=["00052", "01975", "01987"]
+try_near_comp.name=["Ahrensburg-Wulfsdorf", "Hamburg-Fuhlsbüttel", "Hamburg-Sankt Pauli"]
+try_near_comp.distance=[0.35, 13.16, 19.42]
+try_near_comp.v_ave=[2.9, 4.02, 4.94]
+try_near_comp.cp_s=[3.63, 8.69, 6.34]
+try_near_comp.cp_m=[5.32, 12.02, 9.11]
+try_near_comp.cp_l=[6.06, 13.71, 10.53]
+
+var try_report_link = {} 
+try_report_link = "https://www.dwd.de/DE/leistungen/testreferenzjahre/testreferenzjahre.html;jsessionid=CC9FB95EC0D9FEF8737B298330325F68.live11053?nn=507312"
 
 var try_monthly_v_ave = {} 
 try_monthly_v_ave.m_v_ave = [4.79, 5.34, 4.96, 4.2, 3.83, 3.68, 3.66, 3.41, 3.71, 4.18, 4.25, 4.53] 
@@ -97,4 +111,4 @@ try_hour_v_ave.hour_v_ave = [3.72, 3.72, 3.7, 3.73, 3.74, 3.79, 3.88, 4.09, 4.29
 try_hour_v_ave.std_v_minus = [2.73, 2.73, 2.72, 2.75, 2.76, 2.8, 2.92, 3.13, 3.33, 3.55, 3.74, 3.9, 3.96, 3.99, 3.92, 3.85, 3.68, 3.47, 3.23, 3.02, 2.89, 2.84, 2.79, 2.74] 
 try_hour_v_ave.std_v_plus = [4.7, 4.71, 4.68, 4.72, 4.72, 4.77, 4.85, 5.05, 5.24, 5.51, 5.74, 5.92, 6.01, 6.05, 5.94, 5.84, 5.64, 5.4, 5.14, 4.92, 4.81, 4.76, 4.74, 4.7] 
 try_hour_v_ave.hour_v_max = 5.02 
-var last_check = "2020-02-08" 
+var last_check = "2020-02-22" 
