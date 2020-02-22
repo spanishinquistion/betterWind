@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:700&display=swap" rel="stylesheet">
 
- <link rel="stylesheet" type="text/css" href="../webfiles/hi_res_styles.css">
+ <link rel="stylesheet" type="text/css" href="../webfiles/try_styles.css">
 
   <script type="text/javascript" src="../def/def_cp.js"></script>
   <script type="text/javascript" src="../def/def_v_ave.js"></script>
@@ -83,7 +83,6 @@
         <h3 class="tooltip">Wind Turbine Estimated Production<span class="tooltiptext">Potential energy a turbine could produce in a year. <a href="about.html">More</a></span></h3>
   <table id="recording_history_table" class="table">
   </table>
-
 </div> 
 
 
@@ -93,13 +92,6 @@
     <script>v_ave_plot(try_v_ave);</script>
 </div>
 
-<!--
-<div class = "cell cell_hi_res_data_quality">
-    <h3 class="tooltip">Data Quality</h3>
-    <canvas id="data_quality"></canvas> 
-    <script>data_quality_plot(hi_res_data_quality);</script>
-</div>
--->
 
 <div class = "cell cell_hi_res_wind_ave_monthly">
     <h3 class="tooltip">Wind Speed Monthly Averages</h3>
@@ -203,53 +195,19 @@
 </div>
 
 
-
 <div class="cell cell_capacity_factor">
     <h3 class="tooltip">Capacity Factor<span class="tooltiptext">Estimated percent of possible energy a turbine could produce in a year at the site. Equivalent full time operation.<a href="about.html#capacity_factor">More</a></span></h3>
          <canvas id="capacity_factor"width="600" height="600"></canvas>
     <script>cp_plot(try_production.c_p);</script>
 </div>
 
-<!--
-<div class="cell cell_estimated_production">
-    <h3 class="tooltip">Measurement Height Record<span class="tooltiptext">Record of the measurement mast height used in wind calculations. <a href="about.html#estimated_production_about">More</a></span></h3>
-  <table id="estimated_production" class="table">
-    <script type="text/javascript" src="hi_res_dashboard_site_data_00003.json"></script>
+<div class="cell cell_nearby_comparison_table">
+        <h3 class="tooltip">Nearby Site Comparison<span class="tooltiptext">Nearest sites with measurement data. <a href="about.html">More</a></span></h3>
+  <table id="neary_site_comparison" class="table">
   </table>
-
-
 </div> 
--->
 
-<div class="cell cell_factoids_end">
-      <h3>Data provided by the TRY analysis. </h3>
-<!--
-<div class="key_data">
-        <div>
-          <div>Data Quality</div>
-          <div><script>document.write(site_data.data_quality_0);</script></div>
-          <div>[%]</div>   
-        </div>
-        <div>
-          <div>Higher Quality Data</div>
-          <div><script>document.write(site_data.years10min);</script></div>
-          <div>Years Available</div>
-        </div>
-        <div>
-            <div>Data Freshness</div>
-            <div><script>document.write(site_data.last_check);</script></div>
-            <div>Last Data Measurement</div>
-    </div>
-</div>
--->
-<p>This is a report based on the the DWD TRY Testreferenzjahre. This is data that is created from nearby wind sites and a fluid dynamic analysis of Germany. It can not be 100% accurate but is designed to create the best possible site estimate of local conditions in Germany.</p>
-<div class="button"><script>
-  document.write('<a href=mailto:' + owd_email  + '?subject=Detailed%20wind%20data%20SITE%20-%20' + site_data.number + "%20"   + site_data.site + ",%20"   + site_data.land+ '>' + "Link to DWD/TRY page" + '</a>')
-</script>
-</div>
-
-
- <script>
+<script>
 var row_data = '<tr> <th><h3 class="tooltip"> Turbine<span class="tooltiptext">The Small, Medium and Large turbine models are fully detailed in the Power Production section of the About page. <a href="about.html#power_production_about">More</a></span></h3></th> <th>Rated Power kW</th> <th>Energy Production kWh</th></tr>';
 for (var i = 0; i < try_production.turbine.length; i++) {
   var row_data = row_data + '<tr>' +
@@ -263,8 +221,32 @@ table_body_element.innerHTML = row_data;
 document.getElementById('recording_history_table').appendChild(table_body_element);
 </script>
 
+<!-- NEARBY SITE COMP TABLE DATA -->
+<script>
+var row_data = '<tr> <th>Site</th> <th>Distance [km]</th> <th>V_ave [m/s] </th> <th>Cp [%]</th> </tr>';
+for (var i = 0; i < try_near_comp.site_number.length; i++) {
+  var row_data = row_data + '<tr>' +
+    ' <td><h3 class="tooltip">' + try_near_comp.name[i] + '<span class="tooltiptext">Link to site. <a href="../../webPages/' + try_near_comp.site_number[i] + '/dashboard_' + try_near_comp.site_number[i] + '.html">More</a></span></h3></td> ' +
+    ' <td>' + try_near_comp.distance[i] + '</td>' +
+    ' <td>' + try_near_comp.v_ave[i] + '</td>' +
+    ' <td>' + try_near_comp.cp_l[i] + '</td>' +    '</tr>'; }
+var table_body_element = document.createElement('tbody');
+table_body_element.innerHTML = row_data;
+document.getElementById('neary_site_comparison').appendChild(table_body_element);
+</script>
+<!-- NEARBY SITE COMP TABLE DATA -->
+
+
 <script type="text/javascript" src="../webfiles/menu.js"></script> 
 
+<div class="cell cell_factoids_end">
+      <h3>Data provided by the TRY analysis. </h3>
+
+<p>This is a report based on the the DWD TRY Testreferenzjahre. This is data that is created from nearby wind sites and a fluid dynamic analysis of Germany. It can not be 100% accurate but is designed to create the best possible site estimate of local conditions in Germany.</p>
+<div class="button"><script>
+   document.write('<a href='), document.write(try_report_link), document.write(' target="_blank">Visit DWD/TRY page</a>')
+</script>
+</div>
 
 </body>
 </html>
