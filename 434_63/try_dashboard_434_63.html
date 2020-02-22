@@ -226,7 +226,7 @@ document.getElementById('recording_history_table').appendChild(table_body_elemen
 var row_data = '<tr> <th>Site</th> <th>Distance [km]</th> <th>V_ave [m/s] </th> <th>Cp [%]</th> </tr>';
 for (var i = 0; i < try_near_comp.site_number.length; i++) {
   var row_data = row_data + '<tr>' +
-    ' <td><h3 class="tooltip">' + try_near_comp.name[i] + '<span class="tooltiptext">Link to site. <a href="../../' + try_near_comp.site_number[i] + '/dashboard_' + try_near_comp.site_number[i] + '.html">More</a></span></h3></td> ' +
+    ' <td><h3 class="tooltip">' + try_near_comp.name[i] + '<span class="tooltiptext">Link to site. <a href="../' + try_near_comp.site_number[i] + '/dashboard_' + try_near_comp.site_number[i] + '.html">More</a></span></h3></td> ' +
     ' <td>' + try_near_comp.distance[i] + '</td>' +
     ' <td>' + try_near_comp.v_ave[i] + '</td>' +
     ' <td>' + try_near_comp.cp_l[i] + '</td>' +    '</tr>'; }
