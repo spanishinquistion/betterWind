@@ -22,7 +22,6 @@
 
   <script type="text/javascript" src="../webfiles/Chart.js"></script>  
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script> var href_info = document.write(site_data.site) </script>
 </head>
 <body>
 
@@ -93,13 +92,13 @@
 <div class = "cell cell_wind_history">
     <h3 class="tooltip">Wind Speed Annual History<span class="tooltiptext">Calculated wind speed average based on standard tower heights.<a href="../about.html#average_wind_speed">More</a></span></h3>
     <canvas id="wind_speed_annual_history"></canvas>
-    <script>v_ave_plot(v_ave);</script>
+    <script>v_ave_plot(base_v_ave);</script>
 </div>
 
 <div class = "cell cell_probability_density">
     <h3 class="tooltip">Wind Speed Probability Density<span class="tooltiptext">Wind speed distribution or how often the wind at the site is at a given wind speed.<a href="../about.html#probability_density">More</a></span></h3>
     <canvas id="probability_density"></canvas>
-    <script>pdf_plot(pdf_data);</script>
+    <script>pdf_plot(base_pdf_data);</script>
 </div>
 
 <div class="cell cell_wind_direction">
@@ -111,11 +110,11 @@
 <div class="cell cell_capacity">
     <h3 class="tooltip">Capacity Factor<span class="tooltiptext">Estimated percent of possible energy a turbine could produce in a year at the site. Equivalent full time operation.<a href="../about.html#capacity_factor">More</a></span></h3>
     <canvas id="capacity_factor"width="500" height="500">></canvas> 
-     <script>cp_plot(production.c_p);</script>
+     <script>cp_plot(base_production.c_p);</script>
 </div>
 
 <div class="cell cell_estimated_production">
-    <h3 class="tooltip">Measurement Height Record<span class="tooltiptext">Record of the measurement mast height used in wind calculations. <a href="../about.html#estimated_production_about">More</a></span></h3>
+    <h3 class="tooltip">Measurement Height Record<span class="tooltiptext">Record of the measurement mast height used in wind calculations. <a href="../about.html#measurement_height_about">More</a></span></h3>
   <table id="estimated_production" class="table">
     <script type="text/javascript" src="dashboard_site_data_00044.json"></script>
   </table>
@@ -148,13 +147,14 @@
 
 <script>
 var row_data = '<tr> <th>Year Start </th>  <th>Year End</th> <th> Measurement Height m</th></tr>';
-for (var i = 0; i < meas_height.year_start.length; i++) {
+for (var i = 0; i < meas_height.year_start.length; i++) 
+{
   var row_data = row_data + '<tr>' +
     ' <td>' + meas_height.year_start[i] + '</td>' +
-    ' <td>' + meas_height.year_start[i] + '</td>' +
+    ' <td>' + meas_height.year_end[i] + '</td>' +
     ' <td>' + meas_height.h_m[i].toFixed(2) + '</td>' +
     '</tr>';
-}
+  }
 var table_body_element = document.createElement('tbody');
 table_body_element.innerHTML = row_data;
 document.getElementById('estimated_production').appendChild(table_body_element);
@@ -162,11 +162,11 @@ document.getElementById('estimated_production').appendChild(table_body_element);
 
 <script>
 var row_data = '<tr> <th><h3 class="tooltip"> Turbine<span class="tooltiptext">The Small, Medium and Large turbine models are fully detailed in the Power Production section of the About page. <a href="../about.html#power_production_about">More</a></span></h3></th> <th>Rated Power kW</th> <th>Energy Production kWh</th></tr>';
-for (var i = 0; i < production.turbine.length; i++) {
+for (var i = 0; i < base_production.turbine.length; i++) {
   var row_data = row_data + '<tr>' +
-    ' <td>' + production.turbine[i] + '</td>' +
-    ' <td>' + production.P_R[i] + '</td>' +
-    ' <td>' + production.AEP[i] + '</td>' +
+    ' <td>' + base_production.turbine[i] + '</td>' +
+    ' <td>' + base_production.P_R[i] + '</td>' +
+    ' <td>' + base_production.AEP[i] + '</td>' +
     '</tr>';
 }
 var table_body_element = document.createElement('tbody');
