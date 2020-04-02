@@ -116,6 +116,14 @@
     <script>hourly_v_ave_plot(hi_res_hour_v_ave);</script>
 </div>
 
+
+<div class = "cell cell_probability_density">
+    <h3 class="tooltip">Wind Speed Probability Density<span class="tooltiptext">Wind speed distribution or how often the wind at the site is at a given wind speed.<a href="../about.html#probability_density">More</a></span></h3>
+    <canvas id="probability_density"></canvas>
+    <script>pdf_plot(hi_res_pdf_data);</script>
+</div>
+
+
 <div class = "cell cell_wind_direction_00">  
   <h3 class=tooltip> Prevailing Wind Direction: <script>document.write(site_data.prevailing_wind_dir);</script><span class="tooltiptext">A preliminary analysis of the wind direction are provided along with the prevailing wind direction.<a href="about.html#wind_direction" target="">More</a></span></h3> 
     <canvas id="wind_rose0" width="600" height="600"></canvas>
@@ -238,8 +246,10 @@
 </div>
 
 <p>This is a preliminary report based on the data averaged every 10 minutes. We generate detailed reports on with this data as it is the industry standard.</p>
-<div class="button"><a href="mailto:info@openwinddata.com?subject=Detailed%20wind%20data%20SITE - 00399 Aachen&body=To%20receive%20a%20detailed%20report%20of%20your%20site's%20wind%20data,%20please%20provide%20your%20contact%20information%20below.%20We%20will%20contact%20you%20as%20soon%20as%20possible.">Request a detailed report</a></div>
-
+<!--
+<div class="button"><script>document.write('<a href=mailto:' + owd_email  + '?subject=Detailed%20wind%20data%20SITE%20-%20' + site_data.number + "%20"   + site_data.site + ",%20"   + site_data.land+ '>' + "Request a detailed report" + '</a>')</script>
+</div>
+-->
 <script>
 var h_m = h_m;
 var row_data = '<tr> <th>Year Start </th>  <th>Year End</th> <th> Measurement Height m</th></tr>';

@@ -46,13 +46,18 @@
 
 <div class="cell cell_header_new">
   <div class="site_name">
-    <h1><script>document.write('TRY DATA');</script></h1>
-    <h5><script>document.write(site_data.land);</script></h5>
+<h1><script>document.write('TRY DATA');</script></h1>
     <h5><script>document.write('Latitude '),document.write(site_data.lat);</script></h5>
     <h5><script>document.write('Longitude '),document.write(site_data.lon);</script></h5>
+    <h5><script>document.write('Nearest DWD Measurement Station:');</script></h5>
+    <h5><script>document.write(try_near_comp.name[0]);</script></h5>
+    <h5><script>document.write('Approximate distance: '),document.write(try_near_comp.distance[0]),document.write(' km');</script></h5>
   </div>
     <div class=site_map_div>
-      <object type="text/html" class="site_map" data="../miniMaps/dashboard_map_00003.html"></object>
+      <script type="text/javascript">
+        var url = "../miniMaps/dashboard_map_" + try_near_comp.site_number[0] + ".html";
+        document.write('<object type="text/html" class="site_map" data="' + url + '"></object>');
+      </script>
     </div>
 </div>
 
@@ -71,9 +76,9 @@
         </div>
 
         <div>
-            <div>Most recent </div>
-                <div>  <script>document.write(last_check);</script></div>
-            <div>Page Update</div>
+             <div>Nearest met mast </div>
+                <div>  <script>document.write(try_near_comp.distance[0]);</script></div>
+            <div>KM</div>
         </div>
     </div>
   </div>
