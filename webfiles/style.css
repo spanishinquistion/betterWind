@@ -67,6 +67,7 @@ font-weight: 900;
 #map {
   position:absolute;
   top:0;bottom:0;right:0;left:0;
+  background-color: red;
 }
 
 #map_07ae3330c3004ab88cb95e4a0f671e96 {
@@ -76,7 +77,19 @@ height: 100vh;
 left: 0;
 top: 0;
 z-index: -1;
+background-color: lightblue;
 }
+
+ {
+position: absolute;
+width: 100vw;
+height: 100vh;
+left: 0;
+top: 0;
+z-index: -1;
+background-color: lightblue;
+}
+
 
 .footer {
   position: fixed;
