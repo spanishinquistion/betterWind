@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>methods</title>
+
+
+
+</head>
+
+<body>
+
+<p><link href="https://fonts.googleapis.com/css?family=Libre+Franklin:200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<link href="webfiles/style.css" rel="stylesheet"></p>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<p><nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="index.html">OpenWind</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button></p>
+
+<p><div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Using Our Science
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="overview.html">Overview</a>
+          <a class="dropdown-item" href="datasources.html">Data Sources</a>
+          <a class="dropdown-item current" href="methods.html">Analysis Methods</a>
+<!--          <div class="dropdown-divider"></div>-->
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="wind_map.html">Wind Site Map<!--<span class="sr-only">(current)</span>--></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="00003/dashboard_00003.html">Sample Dashboard</a>
+      </li>
+<!--      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>-->
+    </ul>
+  <!--  <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>-->
+  </div>
+</nav></p>
+
+<h1 id="toc_0">Using Our Science</h1>
+
+<div role="navigation"><ul class="nav nav-tabs">
+  <li class="nav-item"><a class="nav-link" href="overview.html">Overview</a></li>
+  <li class="nav-item"><a class="nav-link" href="datasources.html">Data Sources</a></li>
+  <li class="nav-item"><a class="nav-link active" href="methods.html">Analysis Methods</a></li>
+<!--  <li class="nav-item"><a class="nav-link" href="glossary.html">Wind Science Glossary</a></li>
+--></ul></div>
+
+<h2 id="toc_1">Predicted Wind Speed Average at Hub Height</h2>
+
+<p>Our preliminary analysis provides wind speed values projected to three standard turbine hub heights. Wind speed is predictably generally faster higher up than near the ground. The average wind speed is scaled up from the measurement height to the hub height using an industry-standard logarithmic wind profile. </p>
+
+<p>This profile works an assumed roughness length of z<sub>0</sub> = 0.05, which assumes the site is flat with minimal blockage, such as rural croplands. Obstacles at a site increase the surface roughness and, in turn, lower the speed of the wind as height increases.</p>
+
+<h3 id="toc_2">Logarithmic profile used for the analysis</h3>
+
+<div class="equation"><p>$$v_2 = v_1 { ln ( h_2 / z_0 ) \over ln ( h_1 / z_0)}$$</p></div>
+
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>v2</td>
+<td>wind speed projected to turbine hub height</td>
+</tr>
+<tr>
+<td>v1</td>
+<td>wind speed at measurement height</td>
+</tr>
+<tr>
+<td>h2</td>
+<td>turbine hub height</td>
+</tr>
+<tr>
+<td>h1</td>
+<td>measurement height</td>
+</tr>
+<tr>
+<td>z0</td>
+<td>surface roughness</td>
+</tr>
+</tbody>
+</table>
+
+<!--WC: Is it worth re-ordering the variables so that v1 and v2, h1 and h2 are count up numbers? Or does this read correctly now?-->
+
+<h2 id="toc_3">Wind Speed Probability Distribution</h2>
+
+<p>Wind speed varies at a given site; the industry standard that best models wind speeds is the Weibull distribution. This model allows for a complete estimation of the wind speed probability distribution.</p>
+
+<p>Since the power produced by a wind turbine varies with the wind speed, it is necessary to calculate the wind speed distribution for all wind speeds where a turbine produces power, thus creating a power curve. This data allows us to estimate the energy production and capacity factor.</p>
+
+<h2 id="toc_4">Capacity Factor <em>C<sub>p</sub></em> <em>%</em></h2>
+
+<p>The capacity factor is the percentage estimate of the potential energy a wind turbine produces at a given site for a typical year. If a turbine were to produce at its rated or maximum power over an entire year, then its capacity factor would be 100%. Most onshore sites in Germany expect values in the low teens. </p>
+
+<p>Capacity Factor is a valuable data point for estimating the production and economic viability of a turbine at a site. </p>
+
+<h2 id="toc_5">The Power Curve <em>P</em></h2>
+
+<p>The power curve is the amount of power a wind turbine produces at specific wind speeds. The maximum is the rated power of the turbine, but wind turbine power production is dependent upon the wind speed. Our formula, shown below, calculates power production factoring in standard turbine specifications and wind speed probability distribution.</p>
+
+<h3 id="toc_6">Profile used for power curve</h3>
+
+<div class="equation"><p>$$P = 1/2 \cdot C_p \cdot \rho \cdot \pi \cdot R^2 \cdot v^3$$</p></div>
+
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>P</td>
+<td>power produced [W]</td>
+</tr>
+<tr>
+<td>cp</td>
+<td>turbine power coefficient [%]</td>
+</tr>
+<tr>
+<td>ρ</td>
+<td>air density [kg/m<sup>3</sup></td>
+</tr>
+<tr>
+<td>R</td>
+<td>turbine blade length [m]</td>
+</tr>
+<tr>
+<td>v</td>
+<td>turbine hub height wind speed [m/s]</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="toc_7">Estimated Power Production</h2>
+
+<p>With a site wind speed distribution vector and a power curve vector from a turbine, you can estimate the power production.</p>
+
+<p>The turbines used in the power analysis represent three turbine size categories. The smallest turbine [S] is applicable for a home or farm. The medium turbine [M] is based on a commercial pitch-controlled turbine. The large turbine [L] is also based on a pitch-controlled model and is near the maximum size for onshore installations. The data for the turbine models are in the table below. </p>
+
+<h3 id="toc_8">Wind Turbine Models</h3>
+
+<table>
+<thead>
+<tr>
+<th>Size</th>
+<th>Power Rating [kw]</th>
+<th>Blade Length [m]</th>
+<th>Tower Height [m]</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Small [S]</td>
+<td>10</td>
+<td>3.4</td>
+<td>27</td>
+</tr>
+<tr>
+<td>Medium [M]</td>
+<td>1500</td>
+<td>41</td>
+<td>80</td>
+</tr>
+<tr>
+<td>Large [L]</td>
+<td>3465</td>
+<td>64.5</td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+
+<p>For power production, the density of air assumes a standard 1.225 [kg/m<sup>3</sup>] and turbine availability of 100%. All turbines assume a peak efficiency of 48%. </p>
+
+
+
+
+</body>
+
+</html>
