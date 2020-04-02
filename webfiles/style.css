@@ -1,0 +1,265 @@
+body {
+font-family: 'Libre Franklin', sans-serif; 
+background-color: whitesmoke;
+margin-left: 10em;
+margin-right: 10em;
+max-width: 1100px;
+padding-bottom: 5em;
+}
+/*.navbar {margin-left: 0;}
+*/
+h1, h2, h3 {
+border: none; 
+margin-top: 2em; 
+font-weight: 500;
+}
+h1 {
+margin-top: 0;
+}
+h2 {
+font-size: 24px;
+} 
+h3 {
+font-size: 18px;
+}
+p {
+font-weight: 300; 
+margin-bottom: 1em; 
+line-height: 26px; 
+}
+h2 em { 
+font-weight: 700;
+display: inline-block; 
+border: 1px solid lightgrey; 
+padding: 4px; 
+border-radius: 2px; 
+font-size: 16px;   
+}
+h2 strong { 
+font-weight: 700; 
+display: inline-block; 
+border: 1px solid lightgrey; 
+padding: 4px; 
+border-radius: 2px; 
+font-size: 16px;   }
+.current {
+font-weight: 900;
+}
+.nav {
+margin-top: 1em;
+margin-bottom: 2em;
+}
+strong {
+font-weight: 700;
+}
+.current {
+font-weight: 900;
+}
+
+.equation {
+/*	background-color: white;
+*/	font-size: 20px;
+	padding: 1em 1em 1em 0;
+	display: inline-block;
+}
+
+/*map stuff*/
+#map {
+  position:absolute;
+  top:0;bottom:0;right:0;left:0;
+}
+
+#map_07ae3330c3004ab88cb95e4a0f671e96 {
+position: absolute;
+width: 100vw;
+height: 100vh;
+left: 0;
+top: 0;
+z-index: -1;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 999999;
+  display: grid;
+  grid-template-columns: auto auto;
+  border-top: #DDD 1px solid;
+  padding: 1em;
+}
+
+.footer div {
+  display: inline;
+}
+
+.footer p {
+  color: grey;
+  text-align: left;
+  width: 500px;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.footer img {
+  float: right;
+  background-color: red;
+  width: 200px;
+}
+
+.mapmodule {
+  width: 260px; 
+  height: 100.0%;
+}
+ 
+#recording_history_table table td {
+color: red;
+}
+
+.map_table {
+  font-size: 1.3em;
+  width: 100%;
+  font-weight: 400;
+  border: none;
+}
+
+.map_table tr {
+  height: 2em;
+}
+
+.map_table td:nth-child(1) {
+  font-size: 14px;
+  width: 180px;
+  text-align: left;
+  padding-left: 0;
+}
+
+.map_table td:nth-child(2) {
+  font-size: 1.2em;
+  font-weight: 600;
+  width: 30px;
+  text-align: right;
+  padding-right: 0em;
+}
+
+.map_table td:nth-child(3) {
+  text-align: left;
+  width: auto;
+  padding-right: 0;
+}
+
+.locationName {
+  text-align: center;
+  padding: 6px 0 0 0;
+  margin: 0 0;
+}
+
+.stateName {
+  text-transform: uppercase;
+  font-size: 12px;
+  margin-top: 6px;
+  padding-bottom: .5em;
+  display: block;
+  font-weight: 600;
+}
+
+.stateName {
+  overflow: hidden;
+  text-align: center;
+  color: #888;
+}
+
+.stateName:before,
+.stateName:after {
+  background-color: gainsboro;
+  content: "";
+  display: inline-block;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 50%;
+}
+
+.stateName:before {
+  right: 0.5em;
+  margin-left: -50%;
+}
+
+.stateName:after {
+  left: 0.5em;
+  margin-right: -50%;
+}
+
+.mapmodule .button {
+text-align: center;
+padding: 0 0;
+margin: 0 0
+}
+
+.mapmodule .button a {
+  background-color: #0096f9;
+  border-radius: 6px;
+  font-size: 16px;
+  color: white;
+  padding: 1em;
+  margin-top: 1em;
+  margin-bottom: 0em;
+  padding-bottom: 0;
+  height: 54px;
+  display: block;
+}
+
+/* end map stuff */
+
+
+/*.MathJax_Display { 
+    text-align: left !important;
+    display: inline !important;
+}*/
+
+table {
+  padding: 0;
+  border-collapse: collapse;
+  margin-bottom: 1em; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+.map_table td {
+  border: none;
+}
+
+.map_table tr {
+  border: none;
+}
+
+.map_table tr:nth-child(2) {
+  background-color: white;
+}
+
+
+@media screen and (max-width: 900px) {
+body {
+	margin-left: 1em;
+	margin-right: 1em;
+}
+}
