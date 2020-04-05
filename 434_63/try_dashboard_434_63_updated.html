@@ -61,7 +61,7 @@
         </div>
     </li>
         <li class="nav-item">
-            <a class="nav-link" href="../wind_map2.html">Wind Site Map<!--<span class="sr-only">(current)</span>--></a>
+            <a class="nav-link" href="../wind_map.html">Wind Site Map<!--<span class="sr-only">(current)</span>--></a>
         </li>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sample Reports</a>
@@ -86,17 +86,34 @@
 <div class="cell cell_header_new">
   <div class="site_name">
 <h1><script>document.write('TRY DATA');</script></h1>
-    <h5><script>document.write('Latitude '),document.write(site_data.lat);</script></h5>
-    <h5><script>document.write('Longitude '),document.write(site_data.lon);</script></h5>
-    <h5><script>document.write('Nearest DWD Measurement Station:');</script></h5>
-    <h5><script>document.write(try_near_comp.name[0]);</script></h5>
-    <h5><script>document.write('Approximate distance: '),document.write(try_near_comp.distance[0]),document.write(' km');</script></h5>
+<table>
+  <tr>
+    <td><script>document.write('Latitude');</script></td>
+    <td><script>document.write(site_data.lat),document.write('° N');</script></td>
+  </tr>
+    <tr>
+    <td><script>document.write('Longitude');</script></td>
+    <td><script>document.write(site_data.lon),document.write('° E');</script></td>
+  </tr>
+</table>
+<table>
+    <tr>
+    <td><script>document.write('Nearest DWD Measurement Station');</script></td>
+    <td><script>document.write(try_near_comp.name[0]);</script></td>
+  </tr>
+    <tr>
+    <td><script>document.write('Approximate Distance');</script></td>
+    <td><script>document.write(try_near_comp.distance[0]),document.write(' km');</script></td>
+  </tr>
+</table>
   </div>
-    <div class=site_map_div>
-      <script type="text/javascript">
+    <div class="site_map_div site_nomap_div">
+      <p><script>document.write(site_data.lat),document.write('° N, '),document.write(site_data.lon),document.write('° E');</script></p>
+      <script>document.write('<a href="https://goo.gl/maps/cGqbv2kZu5DLQq2n9" target="none">View on Google Maps</a>');</script>
+<!--       <script type="text/javascript">
         var url = "../miniMaps/dashboard_map_" + try_near_comp.site_number[0] + ".html";
         document.write('<object type="text/html" class="site_map" data="' + url + '"></object>');
-      </script>
+      </script> -->
     </div>
 </div>
 
@@ -160,82 +177,82 @@
 
 <div class = "cell cell_wind_direction_00">  
   <h3 class=tooltip> Prevailing Wind Direction: <script>document.write(site_data.prevailing_wind_dir);</script><span class="tooltiptext">A preliminary analysis of the wind direction are provided along with the prevailing wind direction.<a href="about.html#wind_direction" target="">More</a></span></h3> 
-    <canvas id="wind_rose0" width="600" height="600"></canvas>
+    <canvas class="wind_rose" id="wind_rose0" width="500" height="500"></canvas>
     <script>wind_rose_plot(wind_rose_data_m0);</script>
 </div>
 
 <div class = "cell cell_wind_direction_01">  
   <h3>January</h3> 
-    <canvas id= wind_rose1 width="200" height="200"></canvas>
+    <canvas class="wind_rose_monthly" id= "wind_rose1" width="200" height="200"></canvas>
     <script>wind_rose_plot(wind_rose_data_m1);</script>
 </div>
 
 
 <div class = "cell cell_wind_direction_02">  
   <h3>February</h3> 
-    <canvas id= wind_rose2 width="200" height="200"></canvas>
+    <canvas class="wind_rose_monthly" id= "wind_rose2" width="200px" height="200px"></canvas>
     <script>wind_rose_plot(wind_rose_data_m2);</script>
 </div>
 
 
 <div class = "cell cell_wind_direction_03">  
   <h3>March</h3> 
-    <canvas id= wind_rose3 width="200" height="200"></canvas>
+    <canvas class="wind_rose_monthly" id= "wind_rose3" width="200" height="200"></canvas>
     <script>wind_rose_plot(wind_rose_data_m3);</script>
 </div>
 
 <div class = "cell cell_wind_direction_04">  
   <h3>April</h3> 
-    <canvas id= wind_rose4 width="200" height="200"></canvas>
+    <canvas class="wind_rose_monthly" id= "wind_rose4" width="200" height="200"></canvas>
     <script>wind_rose_plot(wind_rose_data_m4);</script>
 </div>
 
 
 <div class = "cell cell_wind_direction_05">  
   <h3>May</h3> 
-    <canvas id= wind_rose5 width="200" height="200"></canvas>
+    <canvas class="wind_rose_monthly" id= "wind_rose5" width="200" height="200"></canvas>
     <script>wind_rose_plot(wind_rose_data_m5);</script>
 </div>
 
 <div class = "cell cell_wind_direction_06">  
   <h3>June</h3> 
-    <canvas id= wind_rose6 width="200" height="200"></canvas>
+    <canvas class="wind_rose_monthly" id= "wind_rose6" width="200" height="200"></canvas>
     <script>wind_rose_plot(wind_rose_data_m6);</script>
 </div>
 
 <div class = "cell cell_wind_direction_07">  
   <h3>July</h3> 
-    <canvas id= wind_rose7 width="200" height="200"></canvas>
+    <canvas class="wind_rose_monthly" id= "wind_rose7" width="200" height="200"></canvas>
     <script>wind_rose_plot(wind_rose_data_m7);</script>  
 </div>
 
 <div class = "cell cell_wind_direction_08">  
   <h3>August</h3> 
-   <canvas id= wind_rose8 width="200" height="200"></canvas>
+   <canvas class="wind_rose_monthly" id= "wind_rose8" width="200" height="200"></canvas>
     <script>wind_rose_plot(wind_rose_data_m8);</script>  
 </div>
 
 <div class = "cell cell_wind_direction_09">  
   <h3>September</h3> 
-    <canvas id= wind_rose9 width="200" height="200"></canvas>
+    <canvas class="wind_rose_monthly" id= "wind_rose9" width="200" height="200"></canvas>
     <script>wind_rose_plot(wind_rose_data_m9);</script>   
 </div>
 
 <div class = "cell cell_wind_direction_10">  
   <h3>October</h3> 
-    <canvas id= wind_rose10 width="200" height="200"></canvas>
+    <canvas class="wind_rose_monthly" id= "wind_rose10" width="200" height="200"></canvas>
     <script>wind_rose_plot(wind_rose_data_m10);</script>  
 </div>
 
 <div class = "cell cell_wind_direction_11">  
   <h3>November</h3> 
-    <canvas id= wind_rose11 width="200" height="200"></canvas>
+    <canvas class="wind_rose_monthly" id= "wind_rose11" width="200" height="200"></canvas>
     <script>wind_rose_plot(wind_rose_data_m11);</script>  
 </div>
 
 <div class = "cell cell_wind_direction_12">  
   <h3>December</h3> 
-    <canvas id= wind_rose12 width="200" height="200"></canvas>
+    <canvas class="wind_rose_monthly" id= "wind_rose12" width="200" height="200"></canvas>
     <script>wind_rose_plot(wind_rose_data_m12);</script>  
 </div>
 
