@@ -27,6 +27,15 @@ var line_style_2 = dash_line
 This section is the change between Mark's area (above)
 and webmeister will's below)
 */
+var y2dis = 10
+var n_y= v_ave.year.length
+if ( v_ave.type = "base_" && n_y > y2dis) {
+    v_ave.year = v_ave.year.slice(n_y-y2dis,n_y)
+    v_ave.h_m = v_ave.h_m.slice(n_y-y2dis,n_y)
+    v_ave.S = v_ave.S.slice(n_y-y2dis,n_y)
+    v_ave.M = v_ave.M.slice(n_y-y2dis,n_y)
+    v_ave.L = v_ave.L.slice(n_y-y2dis,n_y)
+}
 
 var ctx = document.getElementById(chart_name).getContext('2d');
 
@@ -94,6 +103,7 @@ var myChart = new Chart(ctx, {
     scales: {
       yAxes: [{
         ticks: {
+          suggestedMin: 0,
           beginAtZero: true,
           fontSize: font_1
         },
@@ -104,7 +114,10 @@ var myChart = new Chart(ctx, {
         }
       }],
       xAxes: [{
+        display: true,
         ticks: {
+          suggestedMin: 0,
+          beginAtZero: true,
           fontSize: font_1
         },
         scaleLabel: {
