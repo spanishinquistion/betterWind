@@ -1,3 +1,4 @@
+
 body {
 font-family: 'Libre Franklin', sans-serif; 
 background-color: whitesmoke;
@@ -72,13 +73,13 @@ font-weight: 900;
 }
 
 /*map stuff*/
-#map {
+/*#map {
   position:absolute;
   top:0;bottom:0;right:0;left:0;
   background-color: red;
-}
+}*/
 
-#map_fix {
+.folium-map {
 position: absolute;
 width: 100vw;
 height: 100vh;
@@ -87,17 +88,6 @@ top: 0;
 z-index: 1;
 background-color: lightblue;
 }
-
- {
-position: absolute;
-width: 100vw;
-height: 100vh;
-left: 0;
-top: 0;
-z-index: -1;
-background-color: lightblue;
-}
-
 
 .footer {
   position: fixed;
@@ -130,20 +120,18 @@ background-color: lightblue;
   width: 200px;
 }
 
-.mapmodule {
-  width: 260px; 
-  height: 100.0%;
-}
+
  
 #recording_history_table table td {
-color: red;
-}
+/*color: red;
+*/}
 
 .map_table {
   font-size: 1.3em;
   width: 100%;
   font-weight: 400;
   border: none;
+  background-color: red;
 }
 
 .map_table tr {
@@ -175,6 +163,8 @@ color: red;
   text-align: center;
   padding: 6px 0 0 0;
   margin: 0 0;
+  width: 260px; 
+  height: 100.0%;
 }
 
 .stateName {
@@ -213,13 +203,13 @@ color: red;
   margin-right: -50%;
 }
 
-.mapmodule .button {
+.button {
 text-align: center;
 padding: 0 0;
 margin: 0 0
 }
 
-.mapmodule .button a {
+.button a {
   background-color: #0096f9;
   border-radius: 6px;
   font-size: 16px;
