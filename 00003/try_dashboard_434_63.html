@@ -1,0 +1,314 @@
+<!-- 00003 dashboard html input file --> 
+<META HTTP-EQUIV="content-type" CONTENT="text/html; charset=utf-8">
+<!--<script type="text/javascript" src="hi_res_dashboard_site_data_00003.json"></script> -->
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<script type="text/javascript" src="try_dashboard_site_data_434_63.json"></script> 
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script type="text/javascript" src="../def/def_cp.js"></script>
+  <script type="text/javascript" src="../def/def_v_ave.js"></script>
+  <script type="text/javascript" src="../def/def_wind_rose.js"></script>
+  <script type="text/javascript" src="../def/def_pdf.js"></script>
+  <script type="text/javascript" src="../def/def_data_quality.js"></script>
+  <script type="text/javascript" src="../def/def_monthly_wind_ave.js"></script>
+  <script type="text/javascript" src="../def/def_hourly_wind_ave.js"></script>
+
+
+  <script type="text/javascript" src="../webfiles/Chart.js"></script>  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>OpenWind</title>
+
+<link href="https://fonts.googleapis.com/css?family=Libre+Franklin:200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<link href="../webfiles/style.css" rel="stylesheet">
+
+</head>
+<body>
+
+<p><nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="../index.html">OpenWind</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button></p>
+
+<p><div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Using Our Science
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="../overview.html">Overview</a>
+          <a class="dropdown-item" href="../datasources.html">Data Sources</a>
+          <a class="dropdown-item" href="../methods.html">Analysis Methods</a>
+<!--          <div class="dropdown-divider"></div>-->
+        </div>
+    </li>
+        <li class="nav-item">
+            <a class="nav-link" href="../wind_map.html">Wind Site Map<!--<span class="sr-only">(current)</span>--></a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sample Reports</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="../00003/dashboard_00003.html">Preliminary Dashboard</a>
+            <a class="dropdown-item" href="../00399/hi_res_dashboard_00399.html">High Resolution Dashboard</a>
+            <a class="dropdown-item current" href="../434_63/try_dashboard_434_63.html">DWD TRY Dashboard</a>
+<!--          <div class="dropdown-divider"></div>-->
+        </div>
+    </ul>
+  <!--  <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>-->
+  </div>
+</nav></p>
+
+
+<div class="greater_container">
+<div class="container">
+
+<div class="cell cell_header_new">
+  <div class="site_name">
+<h1><script>document.write('TRY DATA');</script></h1>
+<table>
+  <tr>
+    <td><script>document.write('Latitude');</script></td>
+    <td><script>document.write(site_data.lat),document.write('° N');</script></td>
+  </tr>
+    <tr>
+    <td><script>document.write('Longitude');</script></td>
+    <td><script>document.write(site_data.lon),document.write('° E');</script></td>
+  </tr>
+</table>
+<table>
+    <tr>
+    <td><script>document.write('Nearest DWD Measurement Station');</script></td>
+    <td><script>document.write(try_near_comp.name[0]);</script></td>
+  </tr>
+    <tr>
+    <td><script>document.write('Approximate Distance');</script></td>
+    <td><script>document.write(try_near_comp.distance[0]),document.write(' km');</script></td>
+  </tr>
+</table>
+  </div>
+    <div class="site_map_div site_nomap_div">
+      <p><script>document.write(site_data.lat),document.write('° N, '),document.write(site_data.lon),document.write('° E');</script></p>
+      <script>document.write('<a href="https://goo.gl/maps/cGqbv2kZu5DLQq2n9" target="none">View on Google Maps</a>');</script>
+<!--       <script type="text/javascript">
+        var url = "../miniMaps/dashboard_map_" + try_near_comp.site_number[0] + ".html";
+        document.write('<object type="text/html" class="site_map" data="' + url + '"></object>');
+      </script> -->
+    </div>
+</div>
+
+<div class="cell cell_factoids_start">
+    <div class="cell key_data"> 
+        <div>
+            <div>Average Wind Speed</div>
+                <div> <script>document.write(site_data.v_ave);</script> </div>
+            <div>meters / second</div>
+        </div>
+    
+        <div>
+            <div>Capacity Factor</div>
+                <div><script>document.write(site_data.c_p);</script></div>
+            <div>Percent</div>
+        </div>
+
+        <div>
+             <div>Nearest met mast </div>
+                <div>  <script>document.write(try_near_comp.distance[0]);</script></div>
+            <div>KM</div>
+        </div>
+    </div>
+  </div>
+
+
+<div class="cell cell_recording_history">
+        <h3 class="tooltip">Wind Turbine Estimated Production<span class="tooltiptext">Potentit top right (also needed to keep the top bar height )*/
+.topnav h3 {al energy a turbine could produce in a year. <a href="about.html">More</a></span></h3>
+  <table id="recording_history_table" class="table">
+  </table>
+</div> 
+
+
+<div class = "cell cell_hi_res_wind_history">
+    <h3 class="tooltip">Wind Speed Annual History<span class="tooltiptext">Calculated wind speed average based on standard tower heights.<a href="about.html#average_wind_speed">More</a></span></h3>
+    <canvas id="wind_speed_annual_history"></canvas>
+    <script>v_ave_plot(try_v_ave);</script>
+</div>
+
+
+<div class = "cell cell_hi_res_wind_ave_monthly">
+    <h3 class="tooltip">Wind Speed Monthly Averages</h3>
+    <canvas id="monthly_ave_wind_speed"></canvas>
+    <script>monthly_v_ave_plot(try_monthly_v_ave);</script>
+</div>
+
+<div class = "cell cell_hi_res_wind_ave_hourly">
+    <h3 class="tooltip">Wind Speed Hourly Averages</h3>
+    <canvas id="hourly_ave_wind_speed"></canvas>
+    <script>hourly_v_ave_plot(try_hour_v_ave);</script>
+</div>
+
+
+<div class = "cell cell_probability_density">
+    <h3 class="tooltip">Wind Speed Probability Density<span class="tooltiptext">Wind speed distribution or how often the wind at the site is at a given wind speed.<a href="../about.html#probability_density">More</a></span></h3>
+    <canvas id="probability_density"></canvas>
+    <script>pdf_plot(try_pdf_data);</script>
+</div>
+
+
+<div class = "cell cell_wind_direction_00">  
+  <h3 class=tooltip> Prevailing Wind Direction: <script>document.write(site_data.prevailing_wind_dir);</script><span class="tooltiptext">A preliminary analysis of the wind direction are provided along with the prevailing wind direction.<a href="about.html#wind_direction" target="">More</a></span></h3> 
+    <canvas class="wind_rose" id="wind_rose0" width="500" height="500"></canvas>
+    <script>wind_rose_plot(wind_rose_data_m0);</script>
+</div>
+
+<div class = "cell cell_wind_direction_01">  
+  <h3>January</h3> 
+    <canvas class="wind_rose_monthly" id= "wind_rose1" width="200" height="200"></canvas>
+    <script>wind_rose_plot(wind_rose_data_m1);</script>
+</div>
+
+
+<div class = "cell cell_wind_direction_02">  
+  <h3>February</h3> 
+    <canvas class="wind_rose_monthly" id= "wind_rose2" width="200px" height="200px"></canvas>
+    <script>wind_rose_plot(wind_rose_data_m2);</script>
+</div>
+
+
+<div class = "cell cell_wind_direction_03">  
+  <h3>March</h3> 
+    <canvas class="wind_rose_monthly" id= "wind_rose3" width="200" height="200"></canvas>
+    <script>wind_rose_plot(wind_rose_data_m3);</script>
+</div>
+
+<div class = "cell cell_wind_direction_04">  
+  <h3>April</h3> 
+    <canvas class="wind_rose_monthly" id= "wind_rose4" width="200" height="200"></canvas>
+    <script>wind_rose_plot(wind_rose_data_m4);</script>
+</div>
+
+
+<div class = "cell cell_wind_direction_05">  
+  <h3>May</h3> 
+    <canvas class="wind_rose_monthly" id= "wind_rose5" width="200" height="200"></canvas>
+    <script>wind_rose_plot(wind_rose_data_m5);</script>
+</div>
+
+<div class = "cell cell_wind_direction_06">  
+  <h3>June</h3> 
+    <canvas class="wind_rose_monthly" id= "wind_rose6" width="200" height="200"></canvas>
+    <script>wind_rose_plot(wind_rose_data_m6);</script>
+</div>
+
+<div class = "cell cell_wind_direction_07">  
+  <h3>July</h3> 
+    <canvas class="wind_rose_monthly" id= "wind_rose7" width="200" height="200"></canvas>
+    <script>wind_rose_plot(wind_rose_data_m7);</script>  
+</div>
+
+<div class = "cell cell_wind_direction_08">  
+  <h3>August</h3> 
+   <canvas class="wind_rose_monthly" id= "wind_rose8" width="200" height="200"></canvas>
+    <script>wind_rose_plot(wind_rose_data_m8);</script>  
+</div>
+
+<div class = "cell cell_wind_direction_09">  
+  <h3>September</h3> 
+    <canvas class="wind_rose_monthly" id= "wind_rose9" width="200" height="200"></canvas>
+    <script>wind_rose_plot(wind_rose_data_m9);</script>   
+</div>
+
+<div class = "cell cell_wind_direction_10">  
+  <h3>October</h3> 
+    <canvas class="wind_rose_monthly" id= "wind_rose10" width="200" height="200"></canvas>
+    <script>wind_rose_plot(wind_rose_data_m10);</script>  
+</div>
+
+<div class = "cell cell_wind_direction_11">  
+  <h3>November</h3> 
+    <canvas class="wind_rose_monthly" id= "wind_rose11" width="200" height="200"></canvas>
+    <script>wind_rose_plot(wind_rose_data_m11);</script>  
+</div>
+
+<div class = "cell cell_wind_direction_12">  
+  <h3>December</h3> 
+    <canvas class="wind_rose_monthly" id= "wind_rose12" width="200" height="200"></canvas>
+    <script>wind_rose_plot(wind_rose_data_m12);</script>  
+</div>
+
+
+<div class="cell cell_capacity_factor">
+    <h3 class="tooltip">Capacity Factor<span class="tooltiptext">Estimated percent of possible energy a turbine could produce in a year at the site. Equivalent full time operation.<a href="about.html#capacity_factor">More</a></span></h3>
+         <canvas id="capacity_factor"width="600" height="600"></canvas>
+    <script>cp_plot(try_production.c_p);</script>
+</div>
+
+<div class="cell cell_nearby_comparison_table">
+        <h3 class="tooltip">Nearby Site Comparison<span class="tooltiptext">Nearest sites with measurement data. <a href="about.html">More</a></span></h3>
+  <table id="neary_site_comparison" class="table">
+  </table>
+</div> 
+
+<script>
+var row_data = '<tr> <th><h3 class="tooltip"> Turbine<span class="tooltiptext">The Small, Medium and Large turbine models are fully detailed in the Power Production section of the About page. <a href="about.html#power_production_about">More</a></span></h3></th> <th>Rated Power kW</th> <th>Energy Production kWh</th></tr>';
+for (var i = 0; i < try_production.turbine.length; i++) {
+  var row_data = row_data + '<tr>' +
+    ' <td>' + try_production.turbine[i] + '</td>' +
+    ' <td>' + try_production.P_R[i] + '</td>' +
+    ' <td>' + try_production.AEP[i] + '</td>' +
+    '</tr>';
+}
+var table_body_element = document.createElement('tbody');
+table_body_element.innerHTML = row_data;
+document.getElementById('recording_history_table').appendChild(table_body_element);
+</script>
+
+<!-- NEARBY SITE COMP TABLE DATA -->
+<script>
+var row_data = '<tr> <th>Site</th> <th>Distance [km]</th> <th>V_ave [m/s] </th> <th>Cp [%]</th> </tr>';
+for (var i = 0; i < try_near_comp.site_number.length; i++) {
+  var row_data = row_data + '<tr>' +
+    ' <td><h3 class="tooltip">' + try_near_comp.name[i] + '<span class="tooltiptext">Link to site. <a href="../' + try_near_comp.site_number[i] + '/dashboard_' + try_near_comp.site_number[i] + '.html">More</a></span></h3></td> ' +
+    ' <td>' + try_near_comp.distance[i] + '</td>' +
+    ' <td>' + try_near_comp.v_ave[i] + '</td>' +
+    ' <td>' + try_near_comp.cp_l[i] + '</td>' +    '</tr>'; }
+var table_body_element = document.createElement('tbody');
+table_body_element.innerHTML = row_data;
+document.getElementById('neary_site_comparison').appendChild(table_body_element);
+</script>
+<!-- NEARBY SITE COMP TABLE DATA -->
+
+
+<script type="text/javascript" src="../webfiles/menu.js"></script> 
+
+<div class="cell cell_factoids_end">
+      <h3>Data provided by the TRY analysis. </h3>
+
+<p>This is a report based on the the DWD TRY Testreferenzjahre. This is data that is created from nearby wind sites and a fluid dynamic analysis of Germany. It can not be 100% accurate but is designed to create the best possible site estimate of local conditions in Germany.</p>
+<div class="button"><script>
+   document.write('<a href='), document.write(try_report_link), document.write(' target="_blank">Visit DWD/TRY page</a>')
+</script>
+</div>
+
+</body>
+</html>
