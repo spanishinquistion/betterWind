@@ -35,6 +35,7 @@ var myChart = new Chart(ctx, {
     scales: {
       yAxes: [{
         ticks: {
+          display: pdf_data.pdf_mask,
           beginAtZero: true,
           fontSize:  pdf_data.font_1
         },
