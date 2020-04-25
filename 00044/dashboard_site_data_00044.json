@@ -11,13 +11,13 @@ site_data.LAST_UPDATE = "1995-11-30";
 site_data.c_p = "13.29";
 site_data.v_ave = "3.97";
 site_data.prevailing_wind_dir = "W";
-site_data.lat = "52.8846";
-site_data.lon = "8.2308";
-site_data.gmap_link = "http://www.google.com/maps/place/52.8846,8.2308";
+site_data.lat = "52.89";
+site_data.lon = "8.23";
+site_data.gmap_link = "http://www.google.com/maps/place/52.89,8.23";
 
 var meas_height = {} 
 meas_height.year_start = ["01/1975", "01/1989", "07/1993"]
-meas_height.year_end = ["12/1988", "06/1993", "11/1995"]
+meas_height.year_end = ["12/1988", "06/1993", "04/1996"]
 meas_height.h_m = [10.0, 10.0, 10.0]
 
 var base_production = {} 
@@ -54,4 +54,4 @@ base_data_quality.years = [1969, 1970, 1971, 1972, 1973, 1974, 1975, 1976, 1977,
 base_data_quality.quality = [100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0]
 base_data_quality.ymin = 100.0
 
-var last_check = "2020-03-27" 
+var last_check = "2020-04-25" 
