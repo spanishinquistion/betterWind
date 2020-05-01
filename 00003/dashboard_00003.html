@@ -18,6 +18,7 @@
 
   <script type="text/javascript" src="../def/def_cp.js"></script>
   <script type="text/javascript" src="../def/def_v_ave.js"></script>
+  <script type="text/javascript" src="../def/def_cp_gage.js"></script>
   <script type="text/javascript" src="../def/def_wind_rose.js"></script>
   <script type="text/javascript" src="../def/def_pdf.js"></script>
   <script type="text/javascript" src="../def/def_data_quality.js"></script>
@@ -38,7 +39,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-<link href="../webfiles/style.css" rel="stylesheet">
+<link href="../webfiles/style_temp.css" rel="stylesheet">
 
 </head>
 <body>
@@ -100,28 +101,33 @@
     <td><script>document.write(site_data.lon),document.write('° E');</script></td>
   </tr>
 </table>
-<table>
+</div>
+<!--<table>
     <tr>
     <td><script>document.write(site_data.land),document.write(' Production Rank');</script></td>
     <td><script>document.write(data_check.s00003[1]);</script></td>
-  
-  <!--</tr>
-    <tr>
-    <td><script>document.write('Approximate Distance');</script></td>
-    <td><script>document.write(try_near_comp.distance[0]),document.write(' km');</script></td>
-  </tr>
--->
 </table>
   </div>
-    <div class="site_map_div site_nomap_div">
-      <object type="text/html" class="site_map" data="../miniMaps/dashboard_map_00003.html"></object>
-      <!--<p><script>document.write(site_data.lat),document.write('° N, '),document.write(site_data.lon),document.write('° E');</script></p>
-      <script>document.write('<a href="https://goo.gl/maps/cGqbv2kZu5DLQq2n9" target="none">View on Google Maps</a>');</script>-->
-<!--       <script type="text/javascript">
-        var url = "../miniMaps/dashboard_map_" + try_near_comp.site_number[0] + ".html";
-        document.write('<object type="text/html" class="site_map" data="' + url + '"></object>');
-      </script> -->
-    </div>
+
+</div>
+  <div class="site_cp_gage">
+    <canvas class="wind_rose" id="wind_rose0" width="220" height="220"></canvas>
+    <script>cp_gage_plot(wind_rose_data_m0);</script>
+</div>
+-->
+<div class="site_map_div site_nomap_div">
+  <object type="text/html" class="site_map" data="../miniMaps/dashboard_map_00003.html"></object>
+</div>
+<br>
+
+<div class="site_cp_gage_div">
+  <canvas class="cp_gage" id="cp_gage_plot" width="250" height="250"></canvas>
+    <script>cp_gage_plot(site_data,data_check.s00003[1]);</script>
+
+</div>
+
+
+
 </div>
 
 <div class="cell cell_factoids_start">
