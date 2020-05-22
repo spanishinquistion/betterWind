@@ -522,6 +522,14 @@ font-weight: 400;
   margin-bottom: 10px;
 }
 
+.site_cp_gage_div {
+  background-color: chartreuse;
+  display: inline;
+  padding: 0;
+  margin: 0;
+
+}
+
 .site_dash_footer_data div {
   background-color: lightgrey;
   border-radius: 3px;
