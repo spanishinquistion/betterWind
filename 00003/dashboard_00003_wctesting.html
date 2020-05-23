@@ -86,49 +86,35 @@
 <div class="greater_container">
 <div class="container">
 
-<div class="cell cell_header_new">
-  <div class="site_name">
-<h1><script>document.write(site_data.site);</script></h1>
-<h1><script>document.write(site_data.land);</script></h1>
-<h3><script>document.write('Basic Analysis: Hourly Data');</script></h3>
-<table>
-  <tr>
-    <td><script>document.write('Latitude');</script></td>
-    <td><script>document.write(site_data.lat),document.write('° N');</script></td>
-  </tr>
-    <tr>
-    <td><script>document.write('Longitude');</script></td>
-    <td><script>document.write(site_data.lon),document.write('° E');</script></td>
-  </tr>
-</table>
+    <div class="cell cell_header_new">
+      <div class="site_name">
+        <h1><script>document.write(site_data.site);</script></h1>
+        <h3><script>document.write(site_data.land);</script></h3>
 
-<div class="site_cp_gage_div">
-  <canvas class="cp_gage" id="cp_gage_plot" width="250" height="250"></canvas>
-    <script>cp_gage_plot(site_data,data_check.s00003[1]);</script>
-</div>
+        <table>
+        	<tr>
+            	<td><script>document.write('Latitude');</script></td>
+            	<td><script>document.write(site_data.lat),document.write('° N');</script></td>
+          </tr>
+        	<tr>
+            	<td><script>document.write('Longitude');</script></td>
+            	<td><script>document.write(site_data.lon),document.write('° E');</script></td>
+          </tr>
+          <tr>
+            	<td><script>document.write('State Power Coefficient Rank');</script></td>
+            	<td><script>document.write(data_check.s00003[1]);</script></td>
+          </tr>
+        </table>
+      </div>
 
-</div>
-<!--<table>
-    <tr>
-    <td><script>document.write(site_data.land),document.write(' Production Rank');</script></td>
-    <td><script>document.write(data_check.s00003[1]);</script></td>
-</table>
+      <div class="site_map_div site_nomap_div">
+        <object type="text/html" class="site_map" data="../miniMaps/dashboard_map_00003.html"></object>
+      </div>
+
+      <!--<canvas class="cp_gage" id="cp_gage_plot"></canvas>
+      <script>cp_gage_plot(site_data,data_check.s00003[1]) ;</script>-->
+    </div>
   </div>
-
-</div>
-  <div class="site_cp_gage">
-    <canvas class="wind_rose" id="wind_rose0" width="220" height="220"></canvas>
-    <script>cp_gage_plot(wind_rose_data_m0);</script>
-</div>
--->
-<div class="site_map_div site_nomap_div">
-  <object type="text/html" class="site_map" data="../miniMaps/dashboard_map_00003.html"></object>
-</div>
-<br>
-
-
-
-
 </div>
 
 <div class="cell cell_factoids_start">
@@ -155,8 +141,7 @@
 
 
 <div class="cell cell_recording_history">
-        <h3 class="tooltip">Wind Turbine Estimated Production<span class="tooltiptext">Potentit top right (also needed to keep the top bar height )*/
-.topnav h3 {al energy a turbine could produce in a year. <a href="about.html">More</a></span></h3>
+        <h3 class="tooltip">Wind Turbine Estimated Production<span class="tooltiptext">Energy a turbine could produce in a year. <a href="about.html">More</a></span></h3>
   <table id="recording_history_table" class="table">
   </table>
 </div> 
