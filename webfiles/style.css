@@ -10,26 +10,9 @@ padding-bottom: 5em;
 /*.navbar {margin-left: 0;}
 */
 
-.titlecase {
-  text-transform: capitalize;
-}
-
 .navbar {
 z-index: 3;
 }
-
-.dashboard_label {
-  background-color: #e0e3e5;
-  /*border: 1px solid grey;*/
-  color: #353535;
-  margin-left: auto;
-  margin-right: auto;
-  width: 1040px;
-  padding: 7px 0 4px 0;
-  font-weight: 500;
-  text-align: center;
-/*  text-transform: uppercase;
-*/}
 
 h1, h2, h3 {
 border: none; 
@@ -526,10 +509,10 @@ font-weight: 400;
 }
 
 .key_data div div:nth-child(2) {
-  font-size: 4em;
+  font-size: 3em;
   font-weight: 300;
   grid-column: 2 / 3 ;
-  padding: 36px 0 20px 0;
+  padding: 20px 0;
 }
 
 .key_data div div:nth-child(3) {
@@ -537,14 +520,6 @@ font-weight: 400;
   grid-column: 3 / 4 ;
   padding-top: 10px;
   margin-bottom: 10px;
-}
-
-.site_cp_gage_div {
-  background-color: chartreuse;
-  display: inline;
-  padding: 0;
-  margin: 0;
-
 }
 
 .site_dash_footer_data div {
@@ -750,7 +725,7 @@ opacity: 1;
 }
 
 .key_data div div:nth-child(2) {
-  font-size: 5em;
+  font-size: 4.4em;
   font-weight: 300;
   grid-column: 2 / 3 ;
 }
@@ -818,6 +793,10 @@ opacity: 1;
 .cell_hi_res_wind_history {
   grid-column: 1 / 5;
   grid-row: 4 / 5 ;
+}
+.cell_power_curve {
+  grid-column: 1 / 5 ;
+  grid-row: 1 / 2 ;
 }
 
 .cell_hi_res_data_quality {
