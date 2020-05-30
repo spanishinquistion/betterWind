@@ -1,0 +1,150 @@
+<!-- explanation of data used from the DWD in layman's terms-->
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>OpenWind</title>
+
+
+<script type="text/javascript" src="00003/dashboard_site_data_00003.json"></script> 
+<script type="text/javascript" src="def/def_v_ave_full.js"></script>
+<script type="text/javascript" src="webfiles/Chart.js"></script>  
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Libre+Franklin:200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/> <!-- needed for map icons only -->
+<link href="webfiles/style.css" rel="stylesheet"></p>
+
+</head>
+<body>
+
+
+<p><nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="index.html">OpenWind</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button></p>
+
+<p><div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Using Our Science
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="overview.html">Overview</a>
+          <a class="dropdown-item current" href="datasources.html">Data Sources</a>
+          <a class="dropdown-item" href="methods.html">Analysis Methods</a>
+<!--          <div class="dropdown-divider"></div>-->
+        </div>
+    </li>
+        <li class="nav-item">
+            <a class="nav-link" href="wind_map.html">Wind Site Map<!--<span class="sr-only">(current)</span>--></a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sample Reports</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="00003/dashboard_00003.html">Preliminary Dashboard</a>
+            <a class="dropdown-item" href="00399/hi_res_dashboard_00399.html">High Resolution Dashboard</a>
+            <a class="dropdown-item" href="434_63/try_dashboard_434_63.html">DWD TRY Dashboard</a>
+<!--          <div class="dropdown-divider"></div>-->
+        </div>
+    </ul>
+  <!--  <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>-->
+  </div>
+</nav></p>
+
+<h1 id="toc_0">Converting Data to Information</h1>
+
+<div role="navigation"><ul class="nav nav-tabs">
+  <li class="nav-item"><a class="nav-link" href="overview.html">Overview</a></li>
+  <li class="nav-item"><a class="nav-link active" href="data.html">Data Source</a></li>
+  <li class="nav-item"><a class="nav-link" href="methods.html">Analysis Methods</a></li>
+<!--  <li class="nav-item"><a class="nav-link" href="glossary.html">Wind Science Glossary</a></li>
+--></ul></div>
+
+<!--WC: removing glossary until we have one-->
+
+<p>OpenWind used publicly available raw data to produce an estimate of wind conditions. The data is provided by the DWD <a href = "https://www.dwd.de/DE/Home/home_node.html" target="_blank">(Deutscher WetterDienst)</a>, which has over 400 measurement stations with available data. OpenWind analyses use the measurement data from these sites.</p>
+
+<p>This pages lists the data that is extracted from the DWD files and used in the analyses. </p>
+<!--##Location##
+The map page shows the various stations across Germany. The station name and location are provided to help users find the Deutscher Wetterdienst (DWD) station nearest to their location.-->
+
+<!--WC: I vote to remove location as a data source, unless there is anything technically important to add to the paragraph to make it useful. The actual origin is covered in the introductory paragraph. This note applies to the whole site: until we do something interesting & bankable with location as a data point, no need to make any particular note of it.-->
+<!-- 
+<h2 id="toc_1">Type of Analysis<em>Base/HighResolution/TRY</em> </h2>
+<p>The start of every dashboard/report declares what type of analysis is being presented;</p>
+  
+  <table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Frequency</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>Basic</td>
+<td>Measured Hourly Data</td>
+</tr>
+<tr>
+<td>High Resolution</td>
+<td>Measured 10 Minute Data</td>
+</tr>
+<tr>
+<td>TRY</td>
+<td> Estimated Hourly Data</td>
+</tr>
+</tbody>
+</table>
+
+ -->
+<!-- ***** -->
+<h2 id="toc_1">Location<em>Latitude/Longitude</em><em>°</em></h2>
+<p>All measurements and the TRY data are based on a geographic location and this value is listed in the dashboard/report.</p>
+<p><strong>This helps to locate sites of interest.</strong> </p>
+<!-- ***** -->
+
+<!-- ***** 
+<h2 id="toc_1">State Ranking<em>C<sub>P</sub></em><em>%</em></h2>
+<p>The <em>C<sup>P</sup> is the key value in wind turbine siting. Estimate of the equivalent percent of time the turbine would run at full capacity <em>P<sub>R</sub>. </p>
+<p><strong>This helps to locate sites of interest.</strong> </p>
+***** -->
+
+<h2 id="toc_2">Years of data <em>Y</em> <em>years</em></h2>
+<p>The amount of data available varies at each site. The more data, the more accurate the predictions for future wind conditions. A standard wind site assessment requires at least one year of data at a prospective site. Each site page <a href = "00003/dashboard_00003.html" target="_blank">(Aachen Example)</a> lists how many years of data are available and how recently the data has been updated.</p>
+
+<p><strong>More years of data means a better prediction of wind conditions.</strong> </p>
+
+<h2 id="toc_3">Wind speed measurements<em>V<sub>AVE</sub></em> <strong>m/s</strong></h2>
+
+<p>The wind speed is measured at a measurement station at every DWD site. These time histories provide the basis for the energy calculations. 
+The heights of the measurement stations vary according to site. Over the years these stations have had updates and sometimes the measurement height has changed. The change in measurement heights in integrated into all the calculations and noted in the site dashboard pages. The data is quality checked to remove all missing or bad data and the data quality noted for all sites.</p>
+
+<p><strong>The wind speed data is used to estimate the annual wind speed probability distribution function <a href="methods.html#toc_3">(PDF)</a></strong></p>
+
+<div class = "cell cell_hi_res_wind_history">
+    <h3 class="tooltip">Wind Speed Measurement Annual Average Site: 00003 Aachen<span class="tooltiptext">Calculated wind speed average based on standard tower heights.<a href="about.html#average_wind_speed">More</a></span></h3>
+    <canvas id="wind_speed_annual_history"></canvas>
+    <script>v_ave_plot(base_v_ave);</script>
+</div>
+
+
+</body>
+
+</html>
