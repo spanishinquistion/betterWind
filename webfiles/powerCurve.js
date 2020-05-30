@@ -10,13 +10,14 @@ var font_1 = 18
 var ctx = document.getElementById(chart_name).getContext('2d');
 
 var myChart = new Chart(ctx, {
+  height: 100,
   type: 'line',
   data: {
     labels: v,
     datasets: [{ 
         data: pc,
         label: v,
-        borderColor: c3,
+        borderColor: c2,
         borderWidth: 8,
         fill: false
       },
@@ -24,6 +25,8 @@ var myChart = new Chart(ctx, {
     ]
   },
   options: {
+    responsive: true,
+    maintainAspectRatio: false,
     legend: {
       display: false
     },
