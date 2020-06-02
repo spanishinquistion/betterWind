@@ -11,6 +11,7 @@
 
 <script type="text/javascript" src="00003/dashboard_site_data_00003.json"></script> 
 <script type="text/javascript" src="def/def_v_ave_full.js"></script>
+<script type="text/javascript" src="def/def_wind_rose.js"></script>
 <script type="text/javascript" src="webfiles/Chart.js"></script>  
 
 
@@ -21,52 +22,23 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/> <!-- needed for map icons only -->
 <link href="webfiles/style.css" rel="stylesheet"></p>
 
 </head>
 <body>
 
+<script>
+	$(function(){
+		$('#nav-bar').load('webfiles/nav-bar.html');
+	});
+</script>
 
-<p><nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="index.html">OpenWind</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button></p>
+<div id = "nav-bar"> </div>
 
-<p><div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-          <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Using Our Science
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="overview.html">Overview</a>
-          <a class="dropdown-item current" href="datasources.html">Data Sources</a>
-          <a class="dropdown-item" href="methods.html">Analysis Methods</a>
-<!--          <div class="dropdown-divider"></div>-->
-        </div>
-    </li>
-        <li class="nav-item">
-            <a class="nav-link" href="wind_map.html">Wind Site Map<!--<span class="sr-only">(current)</span>--></a>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sample Reports</a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="00003/dashboard_00003.html">Preliminary Dashboard</a>
-            <a class="dropdown-item" href="00399/hi_res_dashboard_00399.html">High Resolution Dashboard</a>
-            <a class="dropdown-item" href="434_63/try_dashboard_434_63.html">DWD TRY Dashboard</a>
-<!--          <div class="dropdown-divider"></div>-->
-        </div>
-    </ul>
-  <!--  <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>-->
-  </div>
-</nav></p>
-
-<h1 id="toc_0">Converting Data to Information</h1>
+<h1 id="toc_0">Measurement Data</h1>
 
 <div role="navigation"><ul class="nav nav-tabs">
   <li class="nav-item"><a class="nav-link" href="overview.html">Overview</a></li>
@@ -139,9 +111,19 @@ The heights of the measurement stations vary according to site. Over the years t
 <p><strong>The wind speed data is used to estimate the annual wind speed probability distribution function <a href="methods.html#toc_3">(PDF)</a></strong></p>
 
 <div class = "cell cell_hi_res_wind_history">
-    <h3 class="tooltip">Wind Speed Measurement Annual Average Site: 00003 Aachen<span class="tooltiptext">Calculated wind speed average based on standard tower heights.<a href="about.html#average_wind_speed">More</a></span></h3>
+    <h3 class="tooltip">Example Wind Speed Measurement Annual Average - Site: 00003 Aachen<span class="tooltiptext">Calculated wind speed average based on standard tower heights.<a href="about.html#average_wind_speed">More</a></span></h3>
     <canvas id="wind_speed_annual_history"></canvas>
     <script>v_ave_plot(base_v_ave);</script>
+</div>
+
+<h2 id="toc_4">Wind speed direction<em>°</em> </h2>
+
+<p>The wind direction is also measured at each site. While this does not directly affect the wind energy production value, it is a useful metric for arrays of turbine that can be optimized to be facing the oncoming wind and avoid wind shadows. The data is presented in a standard wind rose for each site.</p>
+
+<div class = "cell cell_wind_direction_00">  
+  <h3 class=tooltip>Example Wind Direction Plot - Site: 00003 Aachen, Prevailing Wind: <script>document.write(site_data.prevailing_wind_dir);</script><span class="tooltiptext">A preliminary analysis of the wind direction are provided along with the prevailing wind direction.<a href="about.html#wind_direction" target="">More</a></span></h3> 
+    <canvas class="wind_rose" id="wind_rose0" width="500" height="500"></canvas>
+    <script>wind_rose_plot(wind_rose_data_m0);</script>
 </div>
 
 
