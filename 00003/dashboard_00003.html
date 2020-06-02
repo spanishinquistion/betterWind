@@ -44,44 +44,10 @@
 </head>
 <body>
 
-<p>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="../index.html">OpenWind</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-    <!--</p>-->
-        <p>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Using Our Science</a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="../overview.html">Overview</a>
-                  <a class="dropdown-item" href="../datasources.html">Data Sources</a>
-                  <a class="dropdown-item" href="../methods.html">Analysis Methods</a>
-          <!--          <div class="dropdown-divider"></div>-->
-                </div>
-              </li>
+ <script src="../webfiles/nav_bar.html"></script> 
 
-              <li class="nav-item">
-                <a class="nav-link" href="../wind_map.html">Wind Site Map</a>
-              </li>
 
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sample Reports</a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item current" href="../00003/dashboard_00003.html">Preliminary Dashboard</a>
-                    <a class="dropdown-item" href="../00399/hi_res_dashboard_00399.html">High Resolution Dashboard</a>
-                    <a class="dropdown-item" href="../434_63/try_dashboard_434_63.html">DWD TRY Dashboard</a>
-                  </div>
-              </li>
-            </ul>
-          </div>
-        </p>
-  </nav>
-</p>
-        <p class="dashboard_label"><script>document.write('Basic Analysis Report | Hourly Data');</script> | Report Generated <script>document.write(data_check.s00003[0]);</script></p>
+<p class="dashboard_label"><script>document.write('Basic Analysis Report | Hourly Data');</script> | Report Generated <script>document.write(data_check.s00003[0]);</script></p>
 
 <div class="greater_container">
   <div class="container">
@@ -200,7 +166,7 @@ document.getElementById('recording_history_table').appendChild(table_body_elemen
 
 <script type="text/javascript" src="../webfiles/menu.js"></script>
 
-<div class="cell cell_factoids_end">
+<div class="cell cell_contact_end">
       <h3>All analyses based on publicly available DWD data. </h3>
 
 <p>This is a preliminary report based on hourly data (data averaged every hour). We generate detailed reports on demand. This includes processing the industry standard ten-minute data from publicly available DWD data. The higher resolution data analysis provides more accurate estimates and is the measuring frequency used in industry.</p>
