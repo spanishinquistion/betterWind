@@ -889,7 +889,12 @@ opacity: 1;
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
 
+
+.cell_measurement_heights {
+  grid-column: 1 / 5 ;
+  grid-row: 15 / 16;
 }
 
 #wind_direction {
@@ -903,12 +908,17 @@ opacity: 1;
 
 .cell_nearby_comparison_table {
   grid-column: 1 / 5 ;
-  grid-row: 15 / 16 ;
+  grid-row: 16 / 17 ;
 }
 
 .cell_factoids_end {
   grid-column: 1 / 5 ;
-  grid-row: 16 / 17 ;
+  grid-row: 17 / 18 ;
+}
+
+.cell_contact_end {
+  grid-column: 1 / 5 ;
+  grid-row: 18 / 19 ;
 }
 
 #recording_history_table td:nth-child(3)::after {
