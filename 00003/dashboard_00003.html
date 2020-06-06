@@ -44,8 +44,46 @@
 </head>
 <body>
 
- <script src="../webfiles/nav_bar.html"></script> 
+ <p>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="index.html">OpenWind</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button></p>
 
+<p>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Making Data Information
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="../overview.html">Overview</a>
+          <a class="dropdown-item current" href="../datasources.html">Data</a>
+          <a class="dropdown-item" href="../methods.html">Information and Methods</a>
+<!--          <div class="dropdown-divider"></div>-->
+        </div>
+    </li>
+        <li class="nav-item">
+            <a class="nav-link" href="../wind_map.html">Wind Site Map<!--<span class="sr-only">(current)</span>--></a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sample Reports</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="00003/dashboard_00003.html">Preliminary Dashboard</a>
+            <a class="dropdown-item" href="00399/hi_res_dashboard_00399.html">High Resolution Dashboard</a>
+            <a class="dropdown-item" href="434_63/try_dashboard_434_63.html">DWD TRY Dashboard</a>
+<!--          <div class="dropdown-divider"></div>-->
+        </div>
+    </ul>
+  <!--  <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>-->
+  </div>
+</nav>
+</p>
 
 <p class="dashboard_label"><script>document.write('Basic Analysis Report | Hourly Data');</script> | Report Generated <script>document.write(data_check.s00003[0]);</script></p>
 
@@ -126,7 +164,6 @@
     <script>cp_plot(base_production.c_p);</script>
 </div>
 
-
 <script>
 var row_data = '<tr> <th><h3 class="tooltip">Turbine<span class="tooltiptext">The Small, Medium and Large turbine models are fully detailed in the Power Production section of the About page. <a href="about.html#power_production_about">More</a></span></h3></th> <th>Rated Power kW</th> <th>Energy Production kWh</th></tr>';
 for (var i = 0; i < base_production.turbine.length; i++) {
@@ -140,6 +177,27 @@ var table_body_element = document.createElement('tbody');
 table_body_element.innerHTML = row_data;
 document.getElementById('recording_history_table').appendChild(table_body_element);
 </script>
+
+<div class="cell cell_measurement_heights">
+        <h3 class="tooltip">Measurement Height Record<span class="tooltiptext">Record of the measurement mast height used in wind calculations. <a href="../about.html#measurement_height_about">More</a></span></h3>
+  <table id="measurement_heights" class="table">
+  </table>
+</div> 
+
+<script>
+var row_data = '<tr> <th>Year Start </th>  <th>Year End</th> <th> Measurement Height m</th></tr>';
+for (var i = 0; i < meas_height.year_start.length; i++) {
+  var row_data = row_data + '<tr>' +
+    ' <td>' + meas_height.year_start[i] + '</td>' +
+    ' <td>' + meas_height.year_end[i] + '</td>' +
+    ' <td>' + parseFloat(meas_height.h_m[i]).toFixed(1) + '</td>' +
+    '</tr>';
+}
+var table_body_element = document.createElement('tbody');
+table_body_element.innerHTML = row_data;
+document.getElementById('measurement_heights').appendChild(table_body_element);
+</script>
+
 
 <div class="cell cell_factoids_end">
   <h3>Additional Data Available</h3>

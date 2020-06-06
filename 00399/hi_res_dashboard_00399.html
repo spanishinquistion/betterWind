@@ -56,7 +56,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="../overview.html">Overview</a>
-          <a class="dropdown-item" href="../datasource.html">Data Source</a>
+          <a class="dropdown-item" href="../datasources.html">Data Sources</a>
           <a class="dropdown-item" href="../methods.html">Analysis Methods</a>
 <!--          <div class="dropdown-divider"></div>-->
         </div>
@@ -68,8 +68,8 @@
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sample Reports</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="../00399/dashboard_00399.html">Preliminary Dashboard</a>
-            <a class="dropdown-item current" href="../00399/hi_res_dashboard_00399.html">High Resolution Dashboard</a>
-            <a class="dropdown-item" href="../434_63/hi_res_dashboard_434_63.html">DWD TRY Dashboard</a>
+            <a class="dropdown-item" href="../00399/hi_res_dashboard_00399.html">High Resolution Dashboard</a>
+            <a class="dropdown-item current" href="../434_63/hi_res_dashboard_434_63.html">DWD TRY Dashboard</a>
 <!--          <div class="dropdown-divider"></div>-->
         </div>
     </ul>
@@ -277,7 +277,7 @@ table_body_element.innerHTML = row_data;
 document.getElementById('recording_history_table').appendChild(table_body_element);
 </script>
 
-<!-- NEARBY SITE COMP TABLE DATA -->
+<!-- NEARBY SITE COMP TABLE DATA
 <script>
 var row_data = '<tr> <th>Site</th> <th>Distance [km]</th> <th>V_ave [m/s] </th> <th>Cp [%]</th> </tr>';
 for (var i = 0; i < hi_res_near_comp.site_number.length; i++) {
@@ -290,13 +290,55 @@ var table_body_element = document.createElement('tbody');
 table_body_element.innerHTML = row_data;
 document.getElementById('neary_site_comparison').appendChild(table_body_element);
 </script>
-<!-- NEARBY SITE COMP TABLE DATA -->
+NEARBY SITE COMP TABLE DATA -->
 
+
+<div class="cell cell_measurement_heights">
+        <h3 class="tooltip">Measurement Height Record<span class="tooltiptext">Record of the measurement mast height used in wind calculations. <a href="../about.html#measurement_height_about">More</a></span></h3>
+  <table id="measurement_heights" class="table">
+  </table>
+</div> 
+
+
+<script>
+var h_m = h_m;
+var row_data = '<tr> <th>Year Start </th>  <th>Year End</th> <th> Measurement Height m</th></tr>';
+for (var i = 0; i < meas_height.year_start.length; i++) {
+  var row_data = row_data + '<tr>' +
+    ' <td>' + meas_height.year_start[i] + '</td>' +
+    ' <td>' + meas_height.year_end[i] + '</td>' +
+    ' <td>' + meas_height.h_m[i].toFixed(1) + '</td>' +
+    '</tr>';
+}
+var table_body_element = document.createElement('tbody');
+table_body_element.innerHTML = row_data;
+document.getElementById('measurement_heights').appendChild(table_body_element);
+</script>
+
+<div class="cell cell_factoids_end">
+    <h3>Additional Data Available</h3>
+    <div class="key_data">
+        <div>
+          <div>Data Quality</div>
+          <div><script>document.write(site_data.data_quality_0);</script></div>
+          <div>[%]</div>   
+        </div>
+        <div>
+          <div>Higher Quality Data</div>
+          <div><script>document.write(site_data.years10min);</script></div>
+          <div>Years Available</div>
+        </div>
+        <div>
+            <div>Data Freshness</div>
+            <div><script>document.write(site_data.last);</script></div>
+            <div>Last Data Measurement</div>
+    </div>
+</div>
 
 <script type="text/javascript" src="../webfiles/menu.js"></script> 
 
-<div class="cell cell_factoids_end">
-      <h3>Industry Standard Measurement Frequency Report. </h3>
+<div class="cell cell_contact_end">
+<h3>Industry Standard Measurement Frequency Report. </h3>
 
 <p>This is a preliminary report based on the 10 minute data (data averages recorded every 10 minutes), the industry standard. This gives a more accurate prediction of wind conditions at the given site.</p>
 <div class="button"><script>
