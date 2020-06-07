@@ -8,6 +8,7 @@
 
 <script type="text/javascript" src="dashboard_site_data_00052.json"></script> 
 <script type="text/javascript" src="../extra_files/data_check_js.json"></script> 
+<script type="text/javascript" src="../webfiles/navbar.js"></script> 
 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
   
@@ -56,12 +57,12 @@
     <ul class="navbar-nav mr-auto">
           <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Making Data Information
+          <script>document.write(motto);</script>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="../overview.html">Overview</a>
-          <a class="dropdown-item current" href="../datasources.html">Data</a>
-          <a class="dropdown-item" href="../methods.html">Information and Methods</a>
+          <a class="dropdown-item" href="../overview.html"><script>document.write(navbar_dd.tab1);</script></a></a>
+          <a class="dropdown-item current" href="../datasources.html"><script>document.write(navbar_dd.tab2);</script></a></a>
+          <a class="dropdown-item" href="../methods.html"><script>document.write(navbar_dd.tab3);</script></a></a>
 <!--          <div class="dropdown-divider"></div>-->
         </div>
     </li>
@@ -133,39 +134,39 @@
 </div>
 
 <div class="cell cell_recording_history">
-        <h3 class="tooltip">Wind Turbine Estimated Production<span class="tooltiptext">Potential energy a turbine could produce in a year. <a href="about.html">More</a></span></h3>
+        <h3 class="tooltip">Wind Turbine Estimated Production<span class="tooltiptext">Potential energy a turbine could produce in a year. <a href="../methods.html#toc_7">More</a></span></h3>
   <table id="recording_history_table" class="table">
   </table>
 </div> 
 
 
 <div class = "cell cell_hi_res_wind_history">
-    <h3 class="tooltip">Wind Speed Annual History<span class="tooltiptext">Calculated wind speed average based on standard tower heights.<a href="about.html#average_wind_speed">More</a></span></h3>
+    <h3 class="tooltip">Wind Speed Annual History<span class="tooltiptext">Calculated wind speed average based on standard tower heights.<a href="../datasources.html#toc_3">More</a></span></h3>
     <canvas id="wind_speed_annual_history"></canvas>
     <script>v_ave_plot(base_v_ave);</script>
 </div>
 
 <div class = "cell cell_probability_density">
-    <h3 class="tooltip">Wind Speed Probability Density<span class="tooltiptext">Wind speed distribution or how often the wind at the site is at a given wind speed.<a href="../about.html#probability_density">More</a></span></h3>
+    <h3 class="tooltip">Wind Speed Probability Density<span class="tooltiptext">Wind speed distribution or how often the wind at the site is at a given wind speed.<a href="../methods.html#toc_3">More</a></span></h3>
     <canvas id="probability_density"></canvas>
     <script>pdf_plot(base_pdf_data);</script>
 </div>
 
 
 <div class = "cell cell_wind_direction_00">  
-  <h3 class=tooltip> Prevailing Wind Direction: <script>document.write(site_data.prevailing_wind_dir);</script><span class="tooltiptext">A preliminary analysis of the wind direction are provided along with the prevailing wind direction.<a href="about.html#wind_direction" target="">More</a></span></h3> 
+  <h3 class=tooltip> Prevailing Wind Direction: <script>document.write(site_data.prevailing_wind_dir);</script><span class="tooltiptext">A preliminary analysis of the wind direction are provided along with the prevailing wind direction.<a href="../datasources.html#toc_4" target="">More</a></span></h3> 
     <canvas class="wind_rose" id="wind_rose0" width="500" height="500"></canvas>
     <script>wind_rose_plot(wind_rose_data_m0);</script>
 </div>
 
 <div class="cell cell_capacity_factor">
-    <h3 class="tooltip">Capacity Factor<span class="tooltiptext">Estimated percent of possible energy a turbine could produce in a year at the site. Equivalent full time operation.<a href="about.html#capacity_factor">More</a></span></h3>
+    <h3 class="tooltip">Capacity Factor<span class="tooltiptext">Estimated percent of possible energy a turbine could produce in a year at the site. Equivalent full time operation.<a href="../methods.html#toc_4">More</a></span></h3>
          <canvas id="capacity_factor"width="600" height="600"></canvas>
     <script>cp_plot(base_production.c_p);</script>
 </div>
 
 <script>
-var row_data = '<tr> <th><h3 class="tooltip">Turbine<span class="tooltiptext">The Small, Medium and Large turbine models are fully detailed in the Power Production section of the About page. <a href="about.html#power_production_about">More</a></span></h3></th> <th>Rated Power kW</th> <th>Energy Production kWh</th></tr>';
+var row_data = '<tr> <th><h3 class="tooltip">Turbine<span class="tooltiptext">The Small, Medium and Large turbine models are fully detailed in the Power Production section of the About page. <a href="../methods.html#toc_8">More</a></span></h3></th> <th>Rated Power kW</th> <th>Energy Production kWh</th></tr>';
 for (var i = 0; i < base_production.turbine.length; i++) {
   var row_data = row_data + '<tr>' +
     ' <td>' + base_production.turbine[i] + '</td>' +
@@ -179,7 +180,7 @@ document.getElementById('recording_history_table').appendChild(table_body_elemen
 </script>
 
 <div class="cell cell_measurement_heights">
-        <h3 class="tooltip">Measurement Height Record<span class="tooltiptext">Record of the measurement mast height used in wind calculations. <a href="../about.html#measurement_height_about">More</a></span></h3>
+        <h3 class="tooltip">Measurement Height Record<span class="tooltiptext">Record of the measurement mast height used in wind calculations. <a href="../methods.html#toc_2">More</a></span></h3>
   <table id="measurement_heights" class="table">
   </table>
 </div> 
@@ -225,7 +226,7 @@ document.getElementById('measurement_heights').appendChild(table_body_element);
 <script type="text/javascript" src="../webfiles/menu.js"></script>
 
 <div class="cell cell_contact_end">
-      <h3>All analyses based on publicly available DWD data. </h3>
+<h3>All analyses based on publicly available DWD data. </h3>
 
 <p>This is a preliminary report based on hourly data (data averaged every hour). We generate detailed reports on demand. This includes processing the industry standard ten-minute data from publicly available DWD data. The higher resolution data analysis provides more accurate estimates and is the measuring frequency used in industry.</p>
 
