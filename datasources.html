@@ -10,6 +10,7 @@
 
 
 <script type="text/javascript" src="00003/dashboard_site_data_00003.json"></script> 
+<script type="text/javascript" src="webfiles/navbar.js"></script> 
 <script type="text/javascript" src="def/def_v_ave_full.js"></script>
 <script type="text/javascript" src="def/def_wind_rose.js"></script>
 <script type="text/javascript" src="webfiles/Chart.js"></script>  
@@ -41,12 +42,11 @@
     <ul class="navbar-nav mr-auto">
           <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Making Data Information
-        </a>
+          <script>document.write(motto);</script>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="overview.html">Overview</a>
-          <a class="dropdown-item current" href="datasources.html">Data</a>
-          <a class="dropdown-item" href="methods.html">Information and Methods</a>
+          <a class="dropdown-item" href="overview.html"><script>document.write(navbar_dd.tab1);</script></a>
+          <a class="dropdown-item current" href="datasources.html"><script>document.write(navbar_dd.tab2);</script></a>
+          <a class="dropdown-item" href="methods.html"><script>document.write(navbar_dd.tab3);</script></a>
 <!--          <div class="dropdown-divider"></div>-->
         </div>
     </li>
@@ -73,9 +73,9 @@
 <h1 id="toc_0">Measurement Data</h1>
 
 <div role="navigation"><ul class="nav nav-tabs">
-  <li class="nav-item"><a class="nav-link" href="overview.html">Overview</a></li>
-  <li class="nav-item"><a class="nav-link active" href="data.html">Data</a></li>
-  <li class="nav-item"><a class="nav-link" href="methods.html">Methods and Information</a></li>
+  <li class="nav-item"><a class="nav-link" href="overview.html"><script>document.write(navbar_dd.tab1);</script></a></li>
+  <li class="nav-item"><a class="nav-link active" href="data.html"><script>document.write(navbar_dd.tab2);</script></a></li>
+  <li class="nav-item"><a class="nav-link" href="methods.html"><script>document.write(navbar_dd.tab3);</script></a></li>
 <!--  <li class="nav-item"><a class="nav-link" href="glossary.html">Wind Science Glossary</a></li>
 --></ul></div>
 
@@ -148,7 +148,7 @@ The heights of the measurement stations vary according to site. Over the years t
     <script>v_ave_plot(base_v_ave);</script>
 </div>
 
-<h2 id="toc_4">Wind speed direction <em>°</em> </h2>
+<h2 id="toc_4">Wind direction <em>°</em> </h2>
 
 <p>The wind direction is also measured at each site. While this does not directly affect the wind energy production value, it is a useful metric for arrays of turbine that can be optimized to be facing the oncoming wind and avoid wind shadows. The data is presented in a standard wind rose for each site.</p>
 

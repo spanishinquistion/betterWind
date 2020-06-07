@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-
+<script type="text/javascript" src="webfiles/navbar.js"></script> 
 <head>
 
 <meta charset="utf-8">
@@ -35,12 +35,12 @@
     <ul class="navbar-nav mr-auto">
           <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Making Data Information
+          <script>document.write(motto);</script>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item current" href="overview.html">Overview</a>
-          <a class="dropdown-item" href="datasources.html">Data</a>
-          <a class="dropdown-item" href="methods.html">Information and Methods</a>
+          <a class="dropdown-item current" href="overview.html"><script>document.write(navbar_dd.tab1);</script></a>
+          <a class="dropdown-item" href="datasources.html"><script>document.write(navbar_dd.tab2);</script></a>
+          <a class="dropdown-item" href="methods.html"><script>document.write(navbar_dd.tab3);</script></a>
 <!--          <div class="dropdown-divider"></div>-->
         </div>
     </li>

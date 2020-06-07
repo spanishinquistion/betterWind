@@ -4,6 +4,7 @@
 <head>
 
 <script type="text/javascript" src="00003/dashboard_site_data_00003.json"></script> 
+<script type="text/javascript" src="webfiles/navbar.js"></script> 
 <script type="text/javascript" src="def/def_v_ave.js"></script>
 <script type="text/javascript" src="def/def_pdf.js"></script>
 <script type="text/javascript" src="webfiles/Chart.js"></script>  
@@ -36,12 +37,12 @@
     <ul class="navbar-nav mr-auto">
           <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Making Data Information
+          <script>document.write(motto);</script>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="overview.html">Overview</a>
-          <a class="dropdown-item" href="datasources.html">Data</a>
-          <a class="dropdown-item current" href="methods.html">Information and Methods</a>
+          <a class="dropdown-item" href="overview.html"><script>document.write(navbar_dd.tab1);</script></a>
+          <a class="dropdown-item" href="datasources.html"><script>document.write(navbar_dd.tab2);</script></a>
+          <a class="dropdown-item current" href="methods.html"><script>document.write(navbar_dd.tab3);</script></a>
 <!--          <div class="dropdown-divider"></div>-->
         </div>
     </li>
@@ -67,9 +68,9 @@
 <h1 id="toc_0">Actionable Information</h1>
 
 <div role="navigation"><ul class="nav nav-tabs">
-  <li class="nav-item"><a class="nav-link" href="overview.html">Overview</a></li>
-  <li class="nav-item"><a class="nav-link" href="datasources.html">Data</a></li>
-  <li class="nav-item"><a class="nav-link active" href="methods.html">Information and Methods</a></li>
+  <li class="nav-item"><a class="nav-link" href="overview.html"><script>document.write(navbar_dd.tab1);</script></a></li>
+  <li class="nav-item"><a class="nav-link" href="datasources.html"><script>document.write(navbar_dd.tab2);</script></a></li>
+  <li class="nav-item"><a class="nav-link active" href="methods.html"><script>document.write(navbar_dd.tab3);</script></a></li>
 <!--  <li class="nav-item"><a class="nav-link" href="glossary.html">Wind Science Glossary</a></li>
 --></ul></div>
 
